@@ -1,0 +1,7 @@
+"./Drivers/src/kalman_filter.o"
+"./Drivers/src/stm32f401re_gpio.o"
+"./Drivers/src/stm32f401re_rcc.o"
+"./Src/main.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Startup/startup_stm32f401retx.o"

@@ -1,0 +1,5 @@
+1711762462693	Rename resource 'INC'
+1711769191343	Move 'lib_stm' to 'Drivers'
+1711769201607	Move 'shared' to 'Drivers'
+1711769454023	Move 'lib_stm' to 'libs'
+1711769461693	Move 'shared' to 'libs'
