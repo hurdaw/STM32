@@ -265,7 +265,8 @@ static void BuzzerControl_SetStatus(GPIO_TypeDef *GPIOx, uint8_t GPIO_PIN,
 }
 
 int main(void) {
-	AppInitCommon();
+	AppCommon();
+//	AppInitCommon();
 
 	Led_Init_red1();
 	Led_Init_red2();
@@ -282,7 +283,7 @@ int main(void) {
 	while (1) {
 		processGetValueSensor();
 		processTimerScheduler();
-		ABL_Process();
+//		ABL_Process();
 
 //		while (ButtonRead_Status(BUTTON_GPIO_PORT, BUTTON_PIN3) == 0) {
 //			BuzzerControl_SetStatus(BUZZER_GPIO_PORT, BUZZER_PIN9, 1);
@@ -791,10 +792,7 @@ void Scan_TimeSensor(uint32_t byRepeats) {
  */
 static void AppInitCommon(void) {
 	SystemCoreClockUpdate(); 	// Cấp nguồn clock cho vi điều khiển 84 Mhz.
-	TimerInit();
-	SPI1_Init();// Khởi tạo TIMER sử dụng system tick.
-	I2C_Init_temphumi();
-	TemHumSensor_Init();
+	TimerInit();				// Khởi tạo TIMER sử dụng system tick.
 	LightSensor_AdcInit();		// Khởi tạo ngoại vi ADC ở chế độ Polling
 	LedControl_TimerOCInit(); // Khởi tạo ngoại vi TIMER ở chế độ pawm xung output compare
 
@@ -978,9 +976,9 @@ static void ABL_Process(void) {
 		Kanman_light = Kanman_Light(AdcValue);
 
 		LedControl_TimerOCSetPwm(Kanman_light);
-		memset(src5, 0, sizeof(src3));
-		sprintf(src5, " Light = %d lux  ", Kanman_light);
-		ucg_DrawString(&ucg, 0, 72, 0, src5);
+		memset(src3, 0, sizeof(src3));
+		sprintf(src3, " Light = %d lux  ", Kanman_light);
+		ucg_DrawString(&ucg, 0, 72, 0, src3);
 	}
 	dwTimeInit = dwTimeCurrent;
 }

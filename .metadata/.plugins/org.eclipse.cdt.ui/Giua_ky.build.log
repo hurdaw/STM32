@@ -1,10 +1,48 @@
-10:43:28 **** Incremental Build of configuration Debug for project Giua_ky ****
+16:02:31 **** Incremental Build of configuration Debug for project Giua_ky ****
 make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/CMSIS" -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/inc" -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/src/kalman_filter.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/CMSIS" -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/src/kalman_filter.d" -MT"Drivers/src/kalman_filter.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/src/kalman_filter.o"
+../Src/main.c: In function 'main':
+../Src/main.c:279:13: warning: unused variable 'isButtonPressed' [-Wunused-variable]
+  279 |         int isButtonPressed = 0; // Cờ kiểm tra xem nút đã được nhấn hay chưa
+      |             ^~~~~~~~~~~~~~~
+../Src/main.c:278:13: warning: unused variable 'timeStart' [-Wunused-variable]
+  278 |         int timeStart = 0; // Thời điểm bắt đầu nhấn nút
+      |             ^~~~~~~~~
+At top level:
+../Src/main.c:428:13: warning: 'AppCommon' defined but not used [-Wunused-function]
+  428 | static void AppCommon() {
+      |             ^~~~~~~~~
+In file included from ../Src/main.c:11:
+D:/Năm 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h:33:14: warning: '_kalman_gain' defined but not used [-Wunused-variable]
+   33 | static float _kalman_gain;
+      |              ^~~~~~~~~~~~
+D:/Năm 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h:32:14: warning: '_last_estimate' defined but not used [-Wunused-variable]
+   32 | static float _last_estimate;
+      |              ^~~~~~~~~~~~~~
+D:/Năm 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h:31:14: warning: '_current_estimate' defined but not used [-Wunused-variable]
+   31 | static float _current_estimate;
+      |              ^~~~~~~~~~~~~~~~~
+D:/Năm 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h:30:14: warning: '_q' defined but not used [-Wunused-variable]
+   30 | static float _q;
+      |              ^~
+D:/Năm 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h:29:14: warning: '_err_estimate' defined but not used [-Wunused-variable]
+   29 | static float _err_estimate;
+      |              ^~~~~~~~~~~~~
+D:/Năm 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h:28:14: warning: '_err_measure' defined but not used [-Wunused-variable]
+   28 | static float _err_measure;
+      |              ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Giua_ky.elf" @"objects.list"  -lLibraries -mcpu=cortex-m4 -T"D:\Năm 3\STM32\app\Giua_ky\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Giua_ky.map" -Wl,--gc-sections -static -L"D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Giua_ky.elf
+ 
 arm-none-eabi-size  Giua_ky.elf 
+arm-none-eabi-objdump -h -S Giua_ky.elf  > "Giua_ky.list"
    text	   data	    bss	    dec	    hex	filename
-  30660	    128	   6744	  37532	   929c	Giua_ky.elf
+  28620	    128	   6760	  35508	   8ab4	Giua_ky.elf
 Finished building: default.size.stdout
  
+Finished building: Giua_ky.list
+ 
 
-10:43:28 Build Finished. 0 errors, 0 warnings. (took 141ms)
+16:02:31 Build Finished. 0 errors, 9 warnings. (took 697ms)
 

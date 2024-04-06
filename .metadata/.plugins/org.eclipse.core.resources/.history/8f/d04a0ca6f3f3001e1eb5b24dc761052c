@@ -8,7 +8,7 @@
 #include <timer.h>
 #include <temhumsensor.h>
 #include <Ucglib.h>
-#include <kalman_filter.h>
+//#include <kalman_filter.h>
 #include <lightsensor.h>
 #include <stm32f401re_adc.h>
 #include <stm32f401re_tim.h>

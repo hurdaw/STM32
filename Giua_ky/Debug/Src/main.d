@@ -14,6 +14,7 @@ Src/main.o: ../Src/main.c \
  D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/Ucglib.h \
  D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/ucg.h \
  D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/timer.h \
+ D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h \
  D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/lightsensor.h \
  D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/stm32f401re_adc.h \
  D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/stm32f401re_tim.h
@@ -32,6 +33,7 @@ D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/temhumsensor.h:
 D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/Ucglib.h:
 D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/ucg.h:
 D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/timer.h:
+D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/kalman_filter.h:
 D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/lightsensor.h:
 D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/stm32f401re_adc.h:
 D:/Năm\ 3/STM32/app/Giua_ky/Drivers/inc/stm32f401re_tim.h:

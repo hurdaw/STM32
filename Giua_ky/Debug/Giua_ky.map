@@ -382,6 +382,19 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Src/main.o
  .data          0x0000000000000000        0x0 ./Src/main.o
  .bss           0x0000000000000000        0x0 ./Src/main.o
+ .bss._err_measure
+                0x0000000000000000        0x4 ./Src/main.o
+ .bss._err_estimate
+                0x0000000000000000        0x4 ./Src/main.o
+ .bss._q        0x0000000000000000        0x4 ./Src/main.o
+ .bss._current_estimate
+                0x0000000000000000        0x4 ./Src/main.o
+ .bss._last_estimate
+                0x0000000000000000        0x4 ./Src/main.o
+ .bss._kalman_gain
+                0x0000000000000000        0x4 ./Src/main.o
+ .text.AppCommon
+                0x0000000000000000       0x7c ./Src/main.o
  .debug_macro   0x0000000000000000      0xab4 ./Src/main.o
  .debug_macro   0x0000000000000000       0x22 ./Src/main.o
  .debug_macro   0x0000000000000000       0x8e ./Src/main.o
@@ -2245,6 +2258,8 @@ Discarded input sections
                 0x0000000000000000      0x629 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_ncenR12_hf
                 0x0000000000000000     0x1093 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
+ .rodata.ucg_font_ncenR12_hr
+                0x0000000000000000      0x7a8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_ncenR12_tf
                 0x0000000000000000      0xea4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
  .rodata.ucg_font_ncenR12_tr
@@ -3152,7 +3167,7 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000194                . = ALIGN (0x4)
 
-.text           0x00000000080001a0     0x5d74
+.text           0x00000000080001a0     0x5d28
                 0x00000000080001a0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080001a0       0x40 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -3234,664 +3249,657 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .text.BuzzerControl_SetStatus
                 0x00000000080010d2       0x60 ./Src/main.o
  *fill*         0x0000000008001132        0x2 
- .text.main     0x0000000008001134      0x15c ./Src/main.o
+ .text.main     0x0000000008001134      0x158 ./Src/main.o
                 0x0000000008001134                main
  .text.delay_ms
-                0x0000000008001290       0x30 ./Src/main.o
-                0x0000000008001290                delay_ms
+                0x000000000800128c       0x30 ./Src/main.o
+                0x000000000800128c                delay_ms
  .text.CalculatorTime
-                0x00000000080012c0       0x34 ./Src/main.o
-                0x00000000080012c0                CalculatorTime
- .text.AppCommon
-                0x00000000080012f4       0x7c ./Src/main.o
+                0x00000000080012bc       0x34 ./Src/main.o
+                0x00000000080012bc                CalculatorTime
  .text.SPI1_Init
-                0x0000000008001370       0x60 ./Src/main.o
+                0x00000000080012f0       0x60 ./Src/main.o
  .text.I2C_Init_temphumi
-                0x00000000080013d0       0x94 ./Src/main.o
+                0x0000000008001350       0x94 ./Src/main.o
  .text.I2C_start
-                0x0000000008001464       0x3c ./Src/main.o
-                0x0000000008001464                I2C_start
+                0x00000000080013e4       0x3c ./Src/main.o
+                0x00000000080013e4                I2C_start
  .text.I2C_address_direction
-                0x00000000080014a0       0x60 ./Src/main.o
-                0x00000000080014a0                I2C_address_direction
+                0x0000000008001420       0x60 ./Src/main.o
+                0x0000000008001420                I2C_address_direction
  .text.I2C_transmit
-                0x0000000008001500       0x38 ./Src/main.o
-                0x0000000008001500                I2C_transmit
+                0x0000000008001480       0x38 ./Src/main.o
+                0x0000000008001480                I2C_transmit
  .text.I2C_stop
-                0x0000000008001538       0x14 ./Src/main.o
-                0x0000000008001538                I2C_stop
+                0x00000000080014b8       0x14 ./Src/main.o
+                0x00000000080014b8                I2C_stop
  .text.I2C_receive_nack
-                0x000000000800154c       0x30 ./Src/main.o
-                0x000000000800154c                I2C_receive_nack
+                0x00000000080014cc       0x30 ./Src/main.o
+                0x00000000080014cc                I2C_receive_nack
  .text.I2C_receive_ack
-                0x000000000800157c       0x30 ./Src/main.o
-                0x000000000800157c                I2C_receive_ack
+                0x00000000080014fc       0x30 ./Src/main.o
+                0x00000000080014fc                I2C_receive_ack
  .text.TemHumSensor_readRegister
-                0x00000000080015ac       0xba ./Src/main.o
- *fill*         0x0000000008001666        0x2 
+                0x000000000800152c       0xba ./Src/main.o
+ *fill*         0x00000000080015e6        0x2 
  .text.GetTemp_Sensor
-                0x0000000008001668       0x64 ./Src/main.o
-                0x0000000008001668                GetTemp_Sensor
+                0x00000000080015e8       0x64 ./Src/main.o
+                0x00000000080015e8                GetTemp_Sensor
  .text.GetHumi_Sensor
-                0x00000000080016cc       0x64 ./Src/main.o
-                0x00000000080016cc                GetHumi_Sensor
+                0x000000000800164c       0x64 ./Src/main.o
+                0x000000000800164c                GetHumi_Sensor
  .text.processGetValueSensor
-                0x0000000008001730      0x1a4 ./Src/main.o
-                0x0000000008001730                processGetValueSensor
+                0x00000000080016b0      0x1a4 ./Src/main.o
+                0x00000000080016b0                processGetValueSensor
  .text.Scan_SensorLCD
-                0x00000000080018d4       0x8c ./Src/main.o
-                0x00000000080018d4                Scan_SensorLCD
+                0x0000000008001854       0x8c ./Src/main.o
+                0x0000000008001854                Scan_SensorLCD
  .text.Scan_TimeSensor
-                0x0000000008001960       0x48 ./Src/main.o
-                0x0000000008001960                Scan_TimeSensor
+                0x00000000080018e0       0x48 ./Src/main.o
+                0x00000000080018e0                Scan_TimeSensor
  .text.AppInitCommon
-                0x00000000080019a8       0x78 ./Src/main.o
+                0x0000000008001928       0x98 ./Src/main.o
  .text.LightSensor_AdcInit
-                0x0000000008001a20       0xb8 ./Src/main.o
+                0x00000000080019c0       0xb8 ./Src/main.o
  .text.LedControl_TimerOCInit
-                0x0000000008001ad8       0xa4 ./Src/main.o
+                0x0000000008001a78       0xa4 ./Src/main.o
  .text.LightSensor_AdcPollingRead
-                0x0000000008001b7c       0x38 ./Src/main.o
-                0x0000000008001b7c                LightSensor_AdcPollingRead
+                0x0000000008001b1c       0x38 ./Src/main.o
+                0x0000000008001b1c                LightSensor_AdcPollingRead
  .text.Kanman_Light
-                0x0000000008001bb4       0x2c ./Src/main.o
-                0x0000000008001bb4                Kanman_Light
+                0x0000000008001b54       0x40 ./Src/main.o
+                0x0000000008001b54                Kanman_Light
  .text.LedControl_TimerOCSetPwm
-                0x0000000008001be0       0x1c ./Src/main.o
+                0x0000000008001b94       0x1c ./Src/main.o
  .text.ABL_Process
-                0x0000000008001bfc       0xc8 ./Src/main.o
- .text._sbrk    0x0000000008001cc4       0x6c ./Src/sysmem.o
-                0x0000000008001cc4                _sbrk
+                0x0000000008001bb0       0xc8 ./Src/main.o
+ .text._sbrk    0x0000000008001c78       0x6c ./Src/sysmem.o
+                0x0000000008001c78                _sbrk
  .text.Reset_Handler
-                0x0000000008001d30       0x50 ./Startup/startup_stm32f401retx.o
-                0x0000000008001d30                Reset_Handler
+                0x0000000008001ce4       0x50 ./Startup/startup_stm32f401retx.o
+                0x0000000008001ce4                Reset_Handler
  .text.Default_Handler
-                0x0000000008001d80        0x2 ./Startup/startup_stm32f401retx.o
-                0x0000000008001d80                EXTI2_IRQHandler
-                0x0000000008001d80                DebugMon_Handler
-                0x0000000008001d80                SPI4_IRQHandler
-                0x0000000008001d80                TIM1_CC_IRQHandler
-                0x0000000008001d80                DMA2_Stream5_IRQHandler
-                0x0000000008001d80                HardFault_Handler
-                0x0000000008001d80                DMA1_Stream5_IRQHandler
-                0x0000000008001d80                SDIO_IRQHandler
-                0x0000000008001d80                TAMP_STAMP_IRQHandler
-                0x0000000008001d80                PendSV_Handler
-                0x0000000008001d80                NMI_Handler
-                0x0000000008001d80                EXTI3_IRQHandler
-                0x0000000008001d80                TIM1_UP_TIM10_IRQHandler
-                0x0000000008001d80                I2C3_ER_IRQHandler
-                0x0000000008001d80                EXTI18_OTG_FS_WKUP_IRQHandler
-                0x0000000008001d80                EXTI0_IRQHandler
-                0x0000000008001d80                I2C2_EV_IRQHandler
-                0x0000000008001d80                DMA1_Stream2_IRQHandler
-                0x0000000008001d80                UsageFault_Handler
-                0x0000000008001d80                DMA2_Stream2_IRQHandler
-                0x0000000008001d80                SPI1_IRQHandler
-                0x0000000008001d80                TIM1_BRK_TIM9_IRQHandler
-                0x0000000008001d80                DMA2_Stream3_IRQHandler
-                0x0000000008001d80                USART6_IRQHandler
-                0x0000000008001d80                DMA2_Stream0_IRQHandler
-                0x0000000008001d80                TIM4_IRQHandler
-                0x0000000008001d80                I2C1_EV_IRQHandler
-                0x0000000008001d80                DMA1_Stream6_IRQHandler
-                0x0000000008001d80                DMA1_Stream1_IRQHandler
-                0x0000000008001d80                TIM3_IRQHandler
-                0x0000000008001d80                RCC_IRQHandler
-                0x0000000008001d80                Default_Handler
-                0x0000000008001d80                EXTI15_10_IRQHandler
-                0x0000000008001d80                ADC_IRQHandler
-                0x0000000008001d80                DMA1_Stream7_IRQHandler
-                0x0000000008001d80                TIM5_IRQHandler
-                0x0000000008001d80                DMA2_Stream7_IRQHandler
-                0x0000000008001d80                I2C3_EV_IRQHandler
-                0x0000000008001d80                EXTI9_5_IRQHandler
-                0x0000000008001d80                SPI2_IRQHandler
-                0x0000000008001d80                MemManage_Handler
-                0x0000000008001d80                DMA1_Stream0_IRQHandler
-                0x0000000008001d80                SVC_Handler
-                0x0000000008001d80                EXTI4_IRQHandler
-                0x0000000008001d80                EXTI22_RTC_WKUP_IRQHandler
-                0x0000000008001d80                TIM2_IRQHandler
-                0x0000000008001d80                EXTI16_PVD_IRQHandler
-                0x0000000008001d80                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0000000008001d80                EXTI1_IRQHandler
-                0x0000000008001d80                EXTI17_RTC_Alarm_IRQHandler
-                0x0000000008001d80                I2C2_ER_IRQHandler
-                0x0000000008001d80                DMA2_Stream1_IRQHandler
-                0x0000000008001d80                FLASH_IRQHandler
-                0x0000000008001d80                DMA2_Stream4_IRQHandler
-                0x0000000008001d80                BusFault_Handler
-                0x0000000008001d80                USART1_IRQHandler
-                0x0000000008001d80                OTG_FS_IRQHandler
-                0x0000000008001d80                SPI3_IRQHandler
-                0x0000000008001d80                DMA1_Stream4_IRQHandler
-                0x0000000008001d80                I2C1_ER_IRQHandler
-                0x0000000008001d80                DMA2_Stream6_IRQHandler
-                0x0000000008001d80                DMA1_Stream3_IRQHandler
- *fill*         0x0000000008001d82        0x2 
+                0x0000000008001d34        0x2 ./Startup/startup_stm32f401retx.o
+                0x0000000008001d34                EXTI2_IRQHandler
+                0x0000000008001d34                DebugMon_Handler
+                0x0000000008001d34                SPI4_IRQHandler
+                0x0000000008001d34                TIM1_CC_IRQHandler
+                0x0000000008001d34                DMA2_Stream5_IRQHandler
+                0x0000000008001d34                HardFault_Handler
+                0x0000000008001d34                DMA1_Stream5_IRQHandler
+                0x0000000008001d34                SDIO_IRQHandler
+                0x0000000008001d34                TAMP_STAMP_IRQHandler
+                0x0000000008001d34                PendSV_Handler
+                0x0000000008001d34                NMI_Handler
+                0x0000000008001d34                EXTI3_IRQHandler
+                0x0000000008001d34                TIM1_UP_TIM10_IRQHandler
+                0x0000000008001d34                I2C3_ER_IRQHandler
+                0x0000000008001d34                EXTI18_OTG_FS_WKUP_IRQHandler
+                0x0000000008001d34                EXTI0_IRQHandler
+                0x0000000008001d34                I2C2_EV_IRQHandler
+                0x0000000008001d34                DMA1_Stream2_IRQHandler
+                0x0000000008001d34                UsageFault_Handler
+                0x0000000008001d34                DMA2_Stream2_IRQHandler
+                0x0000000008001d34                SPI1_IRQHandler
+                0x0000000008001d34                TIM1_BRK_TIM9_IRQHandler
+                0x0000000008001d34                DMA2_Stream3_IRQHandler
+                0x0000000008001d34                USART6_IRQHandler
+                0x0000000008001d34                DMA2_Stream0_IRQHandler
+                0x0000000008001d34                TIM4_IRQHandler
+                0x0000000008001d34                I2C1_EV_IRQHandler
+                0x0000000008001d34                DMA1_Stream6_IRQHandler
+                0x0000000008001d34                DMA1_Stream1_IRQHandler
+                0x0000000008001d34                TIM3_IRQHandler
+                0x0000000008001d34                RCC_IRQHandler
+                0x0000000008001d34                Default_Handler
+                0x0000000008001d34                EXTI15_10_IRQHandler
+                0x0000000008001d34                ADC_IRQHandler
+                0x0000000008001d34                DMA1_Stream7_IRQHandler
+                0x0000000008001d34                TIM5_IRQHandler
+                0x0000000008001d34                DMA2_Stream7_IRQHandler
+                0x0000000008001d34                I2C3_EV_IRQHandler
+                0x0000000008001d34                EXTI9_5_IRQHandler
+                0x0000000008001d34                SPI2_IRQHandler
+                0x0000000008001d34                MemManage_Handler
+                0x0000000008001d34                DMA1_Stream0_IRQHandler
+                0x0000000008001d34                SVC_Handler
+                0x0000000008001d34                EXTI4_IRQHandler
+                0x0000000008001d34                EXTI22_RTC_WKUP_IRQHandler
+                0x0000000008001d34                TIM2_IRQHandler
+                0x0000000008001d34                EXTI16_PVD_IRQHandler
+                0x0000000008001d34                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0000000008001d34                EXTI1_IRQHandler
+                0x0000000008001d34                EXTI17_RTC_Alarm_IRQHandler
+                0x0000000008001d34                I2C2_ER_IRQHandler
+                0x0000000008001d34                DMA2_Stream1_IRQHandler
+                0x0000000008001d34                FLASH_IRQHandler
+                0x0000000008001d34                DMA2_Stream4_IRQHandler
+                0x0000000008001d34                BusFault_Handler
+                0x0000000008001d34                USART1_IRQHandler
+                0x0000000008001d34                OTG_FS_IRQHandler
+                0x0000000008001d34                SPI3_IRQHandler
+                0x0000000008001d34                DMA1_Stream4_IRQHandler
+                0x0000000008001d34                I2C1_ER_IRQHandler
+                0x0000000008001d34                DMA2_Stream6_IRQHandler
+                0x0000000008001d34                DMA1_Stream3_IRQHandler
+ *fill*         0x0000000008001d36        0x2 
  .text.SystemInit
-                0x0000000008001d84       0x6c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
-                0x0000000008001d84                SystemInit
+                0x0000000008001d38       0x6c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+                0x0000000008001d38                SystemInit
  .text.SystemCoreClockUpdate
-                0x0000000008001df0       0xf8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
-                0x0000000008001df0                SystemCoreClockUpdate
+                0x0000000008001da4       0xf8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+                0x0000000008001da4                SystemCoreClockUpdate
  .text.SetSysClock
-                0x0000000008001ee8       0xa0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+                0x0000000008001e9c       0xa0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
  .text.ADC_DeInit
-                0x0000000008001f88       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x0000000008001f88                ADC_DeInit
+                0x0000000008001f3c       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008001f3c                ADC_DeInit
  .text.ADC_Init
-                0x0000000008001fa4       0xac D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x0000000008001fa4                ADC_Init
+                0x0000000008001f58       0xac D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008001f58                ADC_Init
  .text.ADC_CommonInit
-                0x0000000008002050       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x0000000008002050                ADC_CommonInit
- .text.ADC_Cmd  0x00000000080020a0       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x00000000080020a0                ADC_Cmd
+                0x0000000008002004       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008002004                ADC_CommonInit
+ .text.ADC_Cmd  0x0000000008002054       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008002054                ADC_Cmd
  .text.ADC_RegularChannelConfig
-                0x00000000080020d8      0x194 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x00000000080020d8                ADC_RegularChannelConfig
+                0x000000000800208c      0x194 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x000000000800208c                ADC_RegularChannelConfig
  .text.ADC_SoftwareStartConv
-                0x000000000800226c       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x000000000800226c                ADC_SoftwareStartConv
+                0x0000000008002220       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008002220                ADC_SoftwareStartConv
  .text.ADC_EOCOnEachRegularChannelCmd
-                0x000000000800228c       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x000000000800228c                ADC_EOCOnEachRegularChannelCmd
+                0x0000000008002240       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008002240                ADC_EOCOnEachRegularChannelCmd
  .text.ADC_ContinuousModeCmd
-                0x00000000080022c4       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x00000000080022c4                ADC_ContinuousModeCmd
+                0x0000000008002278       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008002278                ADC_ContinuousModeCmd
  .text.ADC_DiscModeChannelCountConfig
-                0x00000000080022fc       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x00000000080022fc                ADC_DiscModeChannelCountConfig
+                0x00000000080022b0       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x00000000080022b0                ADC_DiscModeChannelCountConfig
  .text.ADC_DiscModeCmd
-                0x0000000008002340       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x0000000008002340                ADC_DiscModeCmd
+                0x00000000080022f4       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x00000000080022f4                ADC_DiscModeCmd
  .text.ADC_GetConversionValue
-                0x0000000008002378       0x1a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x0000000008002378                ADC_GetConversionValue
+                0x000000000800232c       0x1a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x000000000800232c                ADC_GetConversionValue
  .text.ADC_GetFlagStatus
-                0x0000000008002392       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
-                0x0000000008002392                ADC_GetFlagStatus
- *fill*         0x00000000080023c6        0x2 
+                0x0000000008002346       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+                0x0000000008002346                ADC_GetFlagStatus
+ *fill*         0x000000000800237a        0x2 
  .text.I2C_Init
-                0x00000000080023c8      0x184 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x00000000080023c8                I2C_Init
- .text.I2C_Cmd  0x000000000800254c       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x000000000800254c                I2C_Cmd
+                0x000000000800237c      0x184 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x000000000800237c                I2C_Init
+ .text.I2C_Cmd  0x0000000008002500       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x0000000008002500                I2C_Cmd
  .text.I2C_GenerateSTART
-                0x000000000800258c       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x000000000800258c                I2C_GenerateSTART
+                0x0000000008002540       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x0000000008002540                I2C_GenerateSTART
  .text.I2C_GenerateSTOP
-                0x00000000080025cc       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x00000000080025cc                I2C_GenerateSTOP
+                0x0000000008002580       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x0000000008002580                I2C_GenerateSTOP
  .text.I2C_Send7bitAddress
-                0x000000000800260c       0x3c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x000000000800260c                I2C_Send7bitAddress
+                0x00000000080025c0       0x3c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x00000000080025c0                I2C_Send7bitAddress
  .text.I2C_AcknowledgeConfig
-                0x0000000008002648       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x0000000008002648                I2C_AcknowledgeConfig
+                0x00000000080025fc       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x00000000080025fc                I2C_AcknowledgeConfig
  .text.I2C_SendData
-                0x0000000008002688       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x0000000008002688                I2C_SendData
+                0x000000000800263c       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x000000000800263c                I2C_SendData
  .text.I2C_ReceiveData
-                0x00000000080026a8       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x00000000080026a8                I2C_ReceiveData
+                0x000000000800265c       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x000000000800265c                I2C_ReceiveData
  .text.I2C_CheckEvent
-                0x00000000080026c4       0x60 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x00000000080026c4                I2C_CheckEvent
+                0x0000000008002678       0x60 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x0000000008002678                I2C_CheckEvent
  .text.I2C_GetFlagStatus
-                0x0000000008002724       0x66 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
-                0x0000000008002724                I2C_GetFlagStatus
- *fill*         0x000000000800278a        0x2 
+                0x00000000080026d8       0x66 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+                0x00000000080026d8                I2C_GetFlagStatus
+ *fill*         0x000000000800273e        0x2 
  .text.TIM_TimeBaseInit
-                0x000000000800278c       0xd8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
-                0x000000000800278c                TIM_TimeBaseInit
- .text.TIM_Cmd  0x0000000008002864       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
-                0x0000000008002864                TIM_Cmd
+                0x0000000008002740       0xd8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+                0x0000000008002740                TIM_TimeBaseInit
+ .text.TIM_Cmd  0x0000000008002818       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+                0x0000000008002818                TIM_Cmd
  .text.TIM_OC4Init
-                0x00000000080028a4       0xd0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
-                0x00000000080028a4                TIM_OC4Init
+                0x0000000008002858       0xd0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+                0x0000000008002858                TIM_OC4Init
  .text.TIM_SetCompare4
-                0x0000000008002974       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
-                0x0000000008002974                TIM_SetCompare4
+                0x0000000008002928       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+                0x0000000008002928                TIM_SetCompare4
  .text.TIM_CtrlPWMOutputs
-                0x0000000008002990       0x4c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
-                0x0000000008002990                TIM_CtrlPWMOutputs
+                0x0000000008002944       0x4c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+                0x0000000008002944                TIM_CtrlPWMOutputs
  .text.NVIC_SetPriority
-                0x00000000080029dc       0x54 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002990       0x54 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
  .text.SysTick_Config
-                0x0000000008002a30       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x00000000080029e4       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
  .text.TimerInit
-                0x0000000008002a74       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
-                0x0000000008002a74                TimerInit
+                0x0000000008002a28       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002a28                TimerInit
  .text.TimerStart
-                0x0000000008002ab8       0xc4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
-                0x0000000008002ab8                TimerStart
+                0x0000000008002a6c       0xc4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002a6c                TimerStart
  .text.TimerStop
-                0x0000000008002b7c       0xa0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
-                0x0000000008002b7c                TimerStop
+                0x0000000008002b30       0xa0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002b30                TimerStop
  .text.GetMilSecTick
-                0x0000000008002c1c       0x18 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
-                0x0000000008002c1c                GetMilSecTick
+                0x0000000008002bd0       0x18 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002bd0                GetMilSecTick
  .text.processTimerScheduler
-                0x0000000008002c34       0xf0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
-                0x0000000008002c34                processTimerScheduler
+                0x0000000008002be8       0xf0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002be8                processTimerScheduler
  .text.TimeExpired
-                0x0000000008002d24       0xcc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002cd8       0xcc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
  .text.SysTick_Handler
-                0x0000000008002df0       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
-                0x0000000008002df0                SysTick_Handler
+                0x0000000008002da4       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x0000000008002da4                SysTick_Handler
  .text.TemHumSensor_Init
-                0x0000000008002e0c        0xc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
-                0x0000000008002e0c                TemHumSensor_Init
+                0x0000000008002dc0        0xc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+                0x0000000008002dc0                TemHumSensor_Init
  .text.i2c_config
-                0x0000000008002e18       0x94 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
-                0x0000000008002e18                i2c_config
+                0x0000000008002dcc       0x94 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+                0x0000000008002dcc                i2c_config
  .text.USART2_IRQHandler
-                0x0000000008002eac       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
-                0x0000000008002eac                USART2_IRQHandler
+                0x0000000008002e60       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+                0x0000000008002e60                USART2_IRQHandler
  .text.delayMicroseconds
-                0x0000000008002efc       0x14 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+                0x0000000008002eb0       0x14 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
  .text.ucg_gpio_init
-                0x0000000008002f10       0x60 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+                0x0000000008002ec4       0x60 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
  .text.ucg_com_arduino_send_generic_SW_SPI
-                0x0000000008002f70       0x74 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+                0x0000000008002f24       0x74 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
  .text.ucg_com_arduino_generic_SW_SPI
-                0x0000000008002fe4      0x1ec D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+                0x0000000008002f98      0x1ec D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
  .text.Ucglib4WireSWSPI_begin
-                0x00000000080031d0       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
-                0x00000000080031d0                Ucglib4WireSWSPI_begin
+                0x0000000008003184       0x38 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+                0x0000000008003184                Ucglib4WireSWSPI_begin
  .text.ucg_DrawBox
-                0x0000000008003208       0x56 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
-                0x0000000008003208                ucg_DrawBox
+                0x00000000080031bc       0x56 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
+                0x00000000080031bc                ucg_DrawBox
  .text.ucg_ClearScreen
-                0x000000000800325e       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
-                0x000000000800325e                ucg_ClearScreen
+                0x0000000008003212       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
+                0x0000000008003212                ucg_ClearScreen
  .text.ucg_ccs_init
-                0x00000000080032ae       0xc0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
-                0x00000000080032ae                ucg_ccs_init
+                0x0000000008003262       0xc0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+                0x0000000008003262                ucg_ccs_init
  .text.ucg_ccs_step
-                0x000000000800336e       0x80 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
-                0x000000000800336e                ucg_ccs_step
+                0x0000000008003322       0x80 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+                0x0000000008003322                ucg_ccs_step
  .text.ucg_ccs_seek
-                0x00000000080033ee       0xca D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
-                0x00000000080033ee                ucg_ccs_seek
+                0x00000000080033a2       0xca D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+                0x00000000080033a2                ucg_ccs_seek
  .text.ucg_dev_default_cb
-                0x00000000080034b8       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
-                0x00000000080034b8                ucg_dev_default_cb
+                0x000000000800346c       0x44 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
+                0x000000000800346c                ucg_dev_default_cb
  .text.ucg_ext_none
-                0x00000000080034fc       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
-                0x00000000080034fc                ucg_ext_none
+                0x00000000080034b0       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
+                0x00000000080034b0                ucg_ext_none
  .text.ucg_handle_st7735_l90fx
-                0x0000000008003518       0xd8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x0000000008003518                ucg_handle_st7735_l90fx
+                0x00000000080034cc       0xd8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x00000000080034cc                ucg_handle_st7735_l90fx
  .text.ucg_handle_st7735_l90se
-                0x00000000080035f0      0x154 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x00000000080035f0                ucg_handle_st7735_l90se
+                0x00000000080035a4      0x154 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x00000000080035a4                ucg_handle_st7735_l90se
  .text.ucg_dev_ic_st7735_18
-                0x0000000008003744       0xf8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x0000000008003744                ucg_dev_ic_st7735_18
+                0x00000000080036f8       0xf8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x00000000080036f8                ucg_dev_ic_st7735_18
  .text.ucg_ext_st7735_18
-                0x000000000800383c       0x28 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x000000000800383c                ucg_ext_st7735_18
+                0x00000000080037f0       0x28 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x00000000080037f0                ucg_ext_st7735_18
  .text.ucg_PowerDown
-                0x0000000008003864       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
-                0x0000000008003864                ucg_PowerDown
+                0x0000000008003818       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+                0x0000000008003818                ucg_PowerDown
  .text.ucg_PowerUp
-                0x0000000008003898       0x3c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
-                0x0000000008003898                ucg_PowerUp
+                0x000000000800384c       0x3c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+                0x000000000800384c                ucg_PowerUp
  .text.ucg_SetClipBox
-                0x00000000080038d4       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
-                0x00000000080038d4                ucg_SetClipBox
+                0x0000000008003888       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+                0x0000000008003888                ucg_SetClipBox
  .text.ucg_SetMaxClipRange
-                0x00000000080038f2       0x30 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
-                0x00000000080038f2                ucg_SetMaxClipRange
+                0x00000000080038a6       0x30 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+                0x00000000080038a6                ucg_SetMaxClipRange
  .text.ucg_GetDimension
-                0x0000000008003922       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
-                0x0000000008003922                ucg_GetDimension
+                0x00000000080038d6       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+                0x00000000080038d6                ucg_GetDimension
  .text.ucg_DrawL90FXWithArg
-                0x0000000008003946       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
-                0x0000000008003946                ucg_DrawL90FXWithArg
+                0x00000000080038fa       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+                0x00000000080038fa                ucg_DrawL90FXWithArg
  .text.ucg_dev_st7735_18x128x128
-                0x0000000008003964       0x80 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
-                0x0000000008003964                ucg_dev_st7735_18x128x128
+                0x0000000008003918       0x80 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
+                0x0000000008003918                ucg_dev_st7735_18x128x128
  .text.ucg_font_get_byte
-                0x00000000080039e4       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003998       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  .text.ucg_font_get_word
-                0x0000000008003a08       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x00000000080039bc       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  .text.ucg_read_font_info
-                0x0000000008003a48      0x142 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008003a48                ucg_read_font_info
+                0x00000000080039fc      0x142 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x00000000080039fc                ucg_read_font_info
  .text.ucg_font_decode_get_unsigned_bits
-                0x0000000008003b8a       0x96 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008003b8a                ucg_font_decode_get_unsigned_bits
+                0x0000000008003b3e       0x96 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003b3e                ucg_font_decode_get_unsigned_bits
  .text.ucg_font_decode_get_signed_bits
-                0x0000000008003c20       0x46 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008003c20                ucg_font_decode_get_signed_bits
+                0x0000000008003bd4       0x46 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003bd4                ucg_font_decode_get_signed_bits
  .text.ucg_add_vector_y
-                0x0000000008003c66       0x7a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003c1a       0x7a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  .text.ucg_add_vector_x
-                0x0000000008003ce0       0x7a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003c94       0x7a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  .text.ucg_font_decode_len
-                0x0000000008003d5a      0x118 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008003d5a                ucg_font_decode_len
+                0x0000000008003d0e      0x118 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003d0e                ucg_font_decode_len
  .text.ucg_font_setup_decode
-                0x0000000008003e72       0x64 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003e26       0x64 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  .text.ucg_font_decode_glyph
-                0x0000000008003ed6      0x14c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008003ed6                ucg_font_decode_glyph
+                0x0000000008003e8a      0x14c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003e8a                ucg_font_decode_glyph
  .text.ucg_font_get_glyph_data
-                0x0000000008004022       0x7a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008004022                ucg_font_get_glyph_data
+                0x0000000008003fd6       0x7a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008003fd6                ucg_font_get_glyph_data
  .text.ucg_font_draw_glyph
-                0x000000000800409c       0x62 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x000000000800409c                ucg_font_draw_glyph
+                0x0000000008004050       0x62 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008004050                ucg_font_draw_glyph
  .text.ucg_SetFontMode
-                0x00000000080040fe       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x00000000080040fe                ucg_SetFontMode
- *fill*         0x000000000800411e        0x2 
+                0x00000000080040b2       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x00000000080040b2                ucg_SetFontMode
+ *fill*         0x00000000080040d2        0x2 
  .text.ucg_DrawGlyph
-                0x0000000008004120       0xb0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008004120                ucg_DrawGlyph
+                0x00000000080040d4       0xb0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x00000000080040d4                ucg_DrawGlyph
  .text.task_drawString
-                0x00000000080041d0      0x138 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x00000000080041d0                task_drawString
+                0x0000000008004184      0x138 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008004184                task_drawString
  .text.ucg_DrawString
-                0x0000000008004308       0x78 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008004308                ucg_DrawString
+                0x00000000080042bc       0x78 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x00000000080042bc                ucg_DrawString
  .text.ucg_UpdateRefHeight
-                0x0000000008004380       0xd8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008004380                ucg_UpdateRefHeight
+                0x0000000008004334       0xd8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008004334                ucg_UpdateRefHeight
  .text.ucg_font_calc_vref_font
-                0x0000000008004458       0x16 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008004458                ucg_font_calc_vref_font
- *fill*         0x000000000800446e        0x2 
+                0x000000000800440c       0x16 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x000000000800440c                ucg_font_calc_vref_font
+ *fill*         0x0000000008004422        0x2 
  .text.ucg_SetFontPosBaseline
-                0x0000000008004470       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008004470                ucg_SetFontPosBaseline
+                0x0000000008004424       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008004424                ucg_SetFontPosBaseline
  .text.ucg_SetFont
-                0x0000000008004490       0x4c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x0000000008004490                ucg_SetFont
+                0x0000000008004444       0x4c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000008004444                ucg_SetFont
  .text.ucg_init_struct
-                0x00000000080044dc       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
-                0x00000000080044dc                ucg_init_struct
+                0x0000000008004490       0x50 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
+                0x0000000008004490                ucg_init_struct
  .text.ucg_Init
-                0x000000000800452c       0x5c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
-                0x000000000800452c                ucg_Init
+                0x00000000080044e0       0x5c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
+                0x00000000080044e0                ucg_Init
  .text.ucg_Draw90Line
-                0x0000000008004588       0x88 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
-                0x0000000008004588                ucg_Draw90Line
+                0x000000000800453c       0x88 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
+                0x000000000800453c                ucg_Draw90Line
  .text.ucg_DrawHLine
-                0x0000000008004610       0x3e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
-                0x0000000008004610                ucg_DrawHLine
+                0x00000000080045c4       0x3e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
+                0x00000000080045c4                ucg_DrawHLine
  .text.ucg_SetColor
-                0x000000000800464e       0x5c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
-                0x000000000800464e                ucg_SetColor
+                0x0000000008004602       0x5c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
+                0x0000000008004602                ucg_SetColor
  .text.ucg_UndoRotate
-                0x00000000080046aa       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
-                0x00000000080046aa                ucg_UndoRotate
+                0x000000000800465e       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+                0x000000000800465e                ucg_UndoRotate
  .text.ucg_rotate_180_xy
-                0x00000000080046dc       0x66 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
- *fill*         0x0000000008004742        0x2 
+                0x0000000008004690       0x66 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+ *fill*         0x00000000080046f6        0x2 
  .text.ucg_dev_rotate180
-                0x0000000008004744      0x100 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
-                0x0000000008004744                ucg_dev_rotate180
+                0x00000000080046f8      0x100 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+                0x00000000080046f8                ucg_dev_rotate180
  .text.ucg_SetRotate180
-                0x0000000008004844       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
-                0x0000000008004844                ucg_SetRotate180
- .text.bufInit  0x0000000008004878       0x36 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
-                0x0000000008004878                bufInit
+                0x00000000080047f8       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+                0x00000000080047f8                ucg_SetRotate180
+ .text.bufInit  0x000000000800482c       0x36 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+                0x000000000800482c                bufInit
  .text.bufNumItems
-                0x00000000080048ae       0x18 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
-                0x00000000080048ae                bufNumItems
+                0x0000000008004862       0x18 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+                0x0000000008004862                bufNumItems
  .text.bufIsFull
-                0x00000000080048c6       0x26 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
-                0x00000000080048c6                bufIsFull
+                0x000000000800487a       0x26 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+                0x000000000800487a                bufIsFull
  .text.bufIsEmpty
-                0x00000000080048ec       0x26 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
-                0x00000000080048ec                bufIsEmpty
+                0x00000000080048a0       0x26 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+                0x00000000080048a0                bufIsEmpty
  .text.bufFlush
-                0x0000000008004912       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
-                0x0000000008004912                bufFlush
+                0x00000000080048c6       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+                0x00000000080048c6                bufFlush
  .text.bufEnDat
-                0x0000000008004944       0x9c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
-                0x0000000008004944                bufEnDat
+                0x00000000080048f8       0x9c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+                0x00000000080048f8                bufEnDat
  .text.bufDeDat
-                0x00000000080049e0       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
-                0x00000000080049e0                bufDeDat
- .text.memsetl  0x0000000008004a64       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
-                0x0000000008004a64                memsetl
+                0x0000000008004994       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+                0x0000000008004994                bufDeDat
+ .text.memsetl  0x0000000008004a18       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
+                0x0000000008004a18                memsetl
  .text.USART_ReceiveData
-                0x0000000008004a96       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
-                0x0000000008004a96                USART_ReceiveData
+                0x0000000008004a4a       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+                0x0000000008004a4a                USART_ReceiveData
  .text.USART_GetITStatus
-                0x0000000008004ab6       0xb6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
-                0x0000000008004ab6                USART_GetITStatus
+                0x0000000008004a6a       0xb6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+                0x0000000008004a6a                USART_GetITStatus
  .text.USART_ClearITPendingBit
-                0x0000000008004b6c       0x3a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
-                0x0000000008004b6c                USART_ClearITPendingBit
+                0x0000000008004b20       0x3a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+                0x0000000008004b20                USART_ClearITPendingBit
  .text.ucg_clip_is_x_visible
-                0x0000000008004ba6       0x4a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+                0x0000000008004b5a       0x4a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
  .text.ucg_clip_is_y_visible
-                0x0000000008004bf0       0x4a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+                0x0000000008004ba4       0x4a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
  .text.ucg_clip_intersection
-                0x0000000008004c3a       0x74 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+                0x0000000008004bee       0x74 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
  .text.ucg_clip_is_pixel_visible
-                0x0000000008004cae       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
-                0x0000000008004cae                ucg_clip_is_pixel_visible
+                0x0000000008004c62       0x32 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+                0x0000000008004c62                ucg_clip_is_pixel_visible
  .text.ucg_clip_l90fx
-                0x0000000008004ce0      0x300 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
-                0x0000000008004ce0                ucg_clip_l90fx
+                0x0000000008004c94      0x300 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+                0x0000000008004c94                ucg_clip_l90fx
  .text.ucg_clip_l90se
-                0x0000000008004fe0       0x54 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
-                0x0000000008004fe0                ucg_clip_l90se
+                0x0000000008004f94       0x54 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+                0x0000000008004f94                ucg_clip_l90se
  .text.ucg_com_PowerDown
-                0x0000000008005034       0x3e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x0000000008005034                ucg_com_PowerDown
+                0x0000000008004fe8       0x3e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x0000000008004fe8                ucg_com_PowerDown
  .text.ucg_com_PowerUp
-                0x0000000008005072       0x60 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x0000000008005072                ucg_com_PowerUp
+                0x0000000008005026       0x60 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x0000000008005026                ucg_com_PowerUp
  .text.ucg_com_SetLineStatus
-                0x00000000080050d2       0xe2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x00000000080050d2                ucg_com_SetLineStatus
+                0x0000000008005086       0xe2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x0000000008005086                ucg_com_SetLineStatus
  .text.ucg_com_SetResetLineStatus
-                0x00000000080051b4       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x00000000080051b4                ucg_com_SetResetLineStatus
+                0x0000000008005168       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x0000000008005168                ucg_com_SetResetLineStatus
  .text.ucg_com_SetCSLineStatus
-                0x00000000080051d4       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x00000000080051d4                ucg_com_SetCSLineStatus
+                0x0000000008005188       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x0000000008005188                ucg_com_SetCSLineStatus
  .text.ucg_com_SetCDLineStatus
-                0x00000000080051f4       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x00000000080051f4                ucg_com_SetCDLineStatus
+                0x00000000080051a8       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x00000000080051a8                ucg_com_SetCDLineStatus
  .text.ucg_com_DelayMicroseconds
-                0x0000000008005214       0x22 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x0000000008005214                ucg_com_DelayMicroseconds
+                0x00000000080051c8       0x22 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x00000000080051c8                ucg_com_DelayMicroseconds
  .text.ucg_com_DelayMilliseconds
-                0x0000000008005236       0x2c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x0000000008005236                ucg_com_DelayMilliseconds
+                0x00000000080051ea       0x2c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x00000000080051ea                ucg_com_DelayMilliseconds
  .text.ucg_com_SendByte
-                0x0000000008005262       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x0000000008005262                ucg_com_SendByte
+                0x0000000008005216       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x0000000008005216                ucg_com_SendByte
  .text.ucg_com_SendStringP
-                0x0000000008005286       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x0000000008005286                ucg_com_SendStringP
+                0x000000000800523a       0x40 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x000000000800523a                ucg_com_SendStringP
  .text.ucg_com_SendCmdArg
-                0x00000000080052c6       0x74 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
- *fill*         0x000000000800533a        0x2 
+                0x000000000800527a       0x74 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+ *fill*         0x00000000080052ee        0x2 
  .text.ucg_com_SendCmdSeq
-                0x000000000800533c      0x278 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
-                0x000000000800533c                ucg_com_SendCmdSeq
- .text.sprintf  0x00000000080055b4       0x40 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
-                0x00000000080055b4                siprintf
-                0x00000000080055b4                sprintf
- .text.memset   0x00000000080055f4       0x10 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
-                0x00000000080055f4                memset
- .text.__errno  0x0000000008005604        0xc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-errno.o)
-                0x0000000008005604                __errno
+                0x00000000080052f0      0x278 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+                0x00000000080052f0                ucg_com_SendCmdSeq
+ .text.sprintf  0x0000000008005568       0x40 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sprintf.o)
+                0x0000000008005568                siprintf
+                0x0000000008005568                sprintf
+ .text.memset   0x00000000080055a8       0x10 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x00000000080055a8                memset
+ .text.__errno  0x00000000080055b8        0xc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-errno.o)
+                0x00000000080055b8                __errno
  .text.__libc_init_array
-                0x0000000008005610       0x48 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
-                0x0000000008005610                __libc_init_array
+                0x00000000080055c4       0x48 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x00000000080055c4                __libc_init_array
  .text.__retarget_lock_acquire_recursive
-                0x0000000008005658        0x2 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x0000000008005658                __retarget_lock_acquire_recursive
+                0x000000000800560c        0x2 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x000000000800560c                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x000000000800565a        0x2 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x000000000800565a                __retarget_lock_release_recursive
- .text._free_r  0x000000000800565c       0x98 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
-                0x000000000800565c                _free_r
+                0x000000000800560e        0x2 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x000000000800560e                __retarget_lock_release_recursive
+ .text._free_r  0x0000000008005610       0x98 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
+                0x0000000008005610                _free_r
  .text.sbrk_aligned
-                0x00000000080056f4       0x40 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x00000000080056a8       0x40 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x0000000008005734      0x100 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x0000000008005734                _malloc_r
+                0x00000000080056e8      0x100 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x00000000080056e8                _malloc_r
  .text.__malloc_lock
-                0x0000000008005834        0xc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
-                0x0000000008005834                __malloc_lock
+                0x00000000080057e8        0xc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+                0x00000000080057e8                __malloc_lock
  .text.__malloc_unlock
-                0x0000000008005840        0xc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
-                0x0000000008005840                __malloc_unlock
+                0x00000000080057f4        0xc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+                0x00000000080057f4                __malloc_unlock
  .text.__ssputs_r
-                0x000000000800584c       0xb4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
-                0x000000000800584c                __ssputs_r
+                0x0000000008005800       0xb4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x0000000008005800                __ssputs_r
  .text._svfprintf_r
-                0x0000000008005900      0x1fc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
-                0x0000000008005900                _svfiprintf_r
-                0x0000000008005900                _svfprintf_r
+                0x00000000080058b4      0x1fc C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x00000000080058b4                _svfiprintf_r
+                0x00000000080058b4                _svfprintf_r
  .text._printf_common
-                0x0000000008005afc       0xda C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0000000008005afc                _printf_common
- *fill*         0x0000000008005bd6        0x2 
+                0x0000000008005ab0       0xda C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0000000008005ab0                _printf_common
+ *fill*         0x0000000008005b8a        0x2 
  .text._printf_i
-                0x0000000008005bd8      0x244 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0000000008005bd8                _printf_i
- .text.memmove  0x0000000008005e1c       0x34 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
-                0x0000000008005e1c                memmove
- .text._sbrk_r  0x0000000008005e50       0x20 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
-                0x0000000008005e50                _sbrk_r
- .text.memcpy   0x0000000008005e70       0x1c C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
-                0x0000000008005e70                memcpy
+                0x0000000008005b8c      0x244 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0000000008005b8c                _printf_i
+ .text.memmove  0x0000000008005dd0       0x34 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
+                0x0000000008005dd0                memmove
+ .text._sbrk_r  0x0000000008005e04       0x20 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
+                0x0000000008005e04                _sbrk_r
+ .text.memcpy   0x0000000008005e24       0x1c C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+                0x0000000008005e24                memcpy
  .text._realloc_r
-                0x0000000008005e8c       0x5e C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
-                0x0000000008005e8c                _realloc_r
+                0x0000000008005e40       0x5e C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
+                0x0000000008005e40                _realloc_r
  .text._malloc_usable_size_r
-                0x0000000008005eea       0x10 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
-                0x0000000008005eea                _malloc_usable_size_r
+                0x0000000008005e9e       0x10 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
+                0x0000000008005e9e                _malloc_usable_size_r
  *(.glue_7)
- .glue_7        0x0000000008005efa        0x0 linker stubs
+ .glue_7        0x0000000008005eae        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008005efa        0x0 linker stubs
+ .glue_7t       0x0000000008005eae        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x0000000008005efa        0x2 
- .eh_frame      0x0000000008005efc        0x0 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *fill*         0x0000000008005eae        0x2 
+ .eh_frame      0x0000000008005eb0        0x0 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0000000008005efc        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0000000008005efc                _init
- .init          0x0000000008005f00        0x8 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0000000008005eb0        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008005eb0                _init
+ .init          0x0000000008005eb4        0x8 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x0000000008005f08        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0000000008005f08                _fini
- .fini          0x0000000008005f0c        0x8 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0000000008005f14                . = ALIGN (0x4)
-                0x0000000008005f14                _etext = .
+ .fini          0x0000000008005ebc        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0000000008005ebc                _fini
+ .fini          0x0000000008005ec0        0x8 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0000000008005ec8                . = ALIGN (0x4)
+                0x0000000008005ec8                _etext = .
 
-.vfp11_veneer   0x0000000008005f14        0x0
- .vfp11_veneer  0x0000000008005f14        0x0 linker stubs
+.vfp11_veneer   0x0000000008005ec8        0x0
+ .vfp11_veneer  0x0000000008005ec8        0x0 linker stubs
 
-.v4_bx          0x0000000008005f14        0x0
- .v4_bx         0x0000000008005f14        0x0 linker stubs
+.v4_bx          0x0000000008005ec8        0x0
+ .v4_bx         0x0000000008005ec8        0x0 linker stubs
 
-.iplt           0x0000000008005f14        0x0
- .iplt          0x0000000008005f14        0x0 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x0000000008005ec8        0x0
+ .iplt          0x0000000008005ec8        0x0 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0000000008005f14     0x18bc
-                0x0000000008005f14                . = ALIGN (0x4)
+.rodata         0x0000000008005ec8     0x1110
+                0x0000000008005ec8                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008005f14       0x76 ./Src/main.o
- *fill*         0x0000000008005f8a        0x2 
- .rodata        0x0000000008005f8c        0xf D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .rodata        0x0000000008005ec8       0x76 ./Src/main.o
+ *fill*         0x0000000008005f3e        0x2 
+ .rodata        0x0000000008005f40        0xf D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  *(.rodata*)
- *fill*         0x0000000008005f9b        0x1 
+ *fill*         0x0000000008005f4f        0x1 
  .rodata.ucg_st7735_set_pos_seq
-                0x0000000008005f9c       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x0000000008005f9c                ucg_st7735_set_pos_seq
- *fill*         0x0000000008005fba        0x2 
+                0x0000000008005f50       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x0000000008005f50                ucg_st7735_set_pos_seq
+ *fill*         0x0000000008005f6e        0x2 
  .rodata.ucg_st7735_set_pos_dir0_seq
-                0x0000000008005fbc       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x0000000008005fbc                ucg_st7735_set_pos_dir0_seq
- *fill*         0x0000000008005fda        0x2 
+                0x0000000008005f70       0x1e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x0000000008005f70                ucg_st7735_set_pos_dir0_seq
+ *fill*         0x0000000008005f8e        0x2 
  .rodata.ucg_st7735_set_pos_dir1_seq
-                0x0000000008005fdc       0x21 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x0000000008005fdc                ucg_st7735_set_pos_dir1_seq
- *fill*         0x0000000008005ffd        0x3 
+                0x0000000008005f90       0x21 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x0000000008005f90                ucg_st7735_set_pos_dir1_seq
+ *fill*         0x0000000008005fb1        0x3 
  .rodata.ucg_st7735_set_pos_dir2_seq
-                0x0000000008006000       0x21 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x0000000008006000                ucg_st7735_set_pos_dir2_seq
- *fill*         0x0000000008006021        0x3 
+                0x0000000008005fb4       0x21 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x0000000008005fb4                ucg_st7735_set_pos_dir2_seq
+ *fill*         0x0000000008005fd5        0x3 
  .rodata.ucg_st7735_set_pos_dir3_seq
-                0x0000000008006024       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
-                0x0000000008006024                ucg_st7735_set_pos_dir3_seq
+                0x0000000008005fd8       0x24 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+                0x0000000008005fd8                ucg_st7735_set_pos_dir3_seq
  .rodata.ucg_st7735_power_down_seq
-                0x0000000008006048        0x7 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
- *fill*         0x000000000800604f        0x1 
+                0x0000000008005ffc        0x7 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+ *fill*         0x0000000008006003        0x1 
  .rodata.ucg_tft_128x160_st7735_init_seq
-                0x0000000008006050       0x2c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
+                0x0000000008006004       0x2c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
  .rodata.ucg_font_ncenR10_hf
-                0x000000000800607c      0xf75 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
-                0x000000000800607c                ucg_font_ncenR10_hf
- *fill*         0x0000000008006ff1        0x3 
- .rodata.ucg_font_ncenR12_hr
-                0x0000000008006ff4      0x7a8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
-                0x0000000008006ff4                ucg_font_ncenR12_hr
+                0x0000000008006030      0xf75 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
+                0x0000000008006030                ucg_font_ncenR10_hf
  .rodata._svfprintf_r.str1.1
-                0x000000000800779c       0x11 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x0000000008006fa5       0x11 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x00000000080077ad       0x22 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x00000000080077d0                . = ALIGN (0x4)
- *fill*         0x00000000080077cf        0x1 
+                0x0000000008006fb6       0x22 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0000000008006fd8                . = ALIGN (0x4)
 
-.rel.dyn        0x00000000080077d0        0x0
- .rel.iplt      0x00000000080077d0        0x0 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0000000008006fd8        0x0
+ .rel.iplt      0x0000000008006fd8        0x0 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ARM.extab      0x00000000080077d0        0x0
-                0x00000000080077d0                . = ALIGN (0x4)
+.ARM.extab      0x0000000008006fd8        0x0
+                0x0000000008006fd8                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000080077d0                . = ALIGN (0x4)
+                0x0000000008006fd8                . = ALIGN (0x4)
 
-.ARM            0x00000000080077d0        0x0
-                0x00000000080077d0                . = ALIGN (0x4)
-                0x00000000080077d0                __exidx_start = .
+.ARM            0x0000000008006fd8        0x0
+                0x0000000008006fd8                . = ALIGN (0x4)
+                0x0000000008006fd8                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080077d0                __exidx_end = .
-                0x00000000080077d0                . = ALIGN (0x4)
+                0x0000000008006fd8                __exidx_end = .
+                0x0000000008006fd8                . = ALIGN (0x4)
 
-.preinit_array  0x00000000080077d0        0x0
-                0x00000000080077d0                . = ALIGN (0x4)
-                0x00000000080077d0                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008006fd8        0x0
+                0x0000000008006fd8                . = ALIGN (0x4)
+                0x0000000008006fd8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080077d0                PROVIDE (__preinit_array_end = .)
-                0x00000000080077d0                . = ALIGN (0x4)
+                0x0000000008006fd8                PROVIDE (__preinit_array_end = .)
+                0x0000000008006fd8                . = ALIGN (0x4)
 
-.init_array     0x00000000080077d0        0x4
-                0x00000000080077d0                . = ALIGN (0x4)
-                0x00000000080077d0                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008006fd8        0x4
+                0x0000000008006fd8                . = ALIGN (0x4)
+                0x0000000008006fd8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080077d0        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x00000000080077d4                PROVIDE (__init_array_end = .)
-                0x00000000080077d4                . = ALIGN (0x4)
+ .init_array    0x0000000008006fd8        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0000000008006fdc                PROVIDE (__init_array_end = .)
+                0x0000000008006fdc                . = ALIGN (0x4)
 
-.fini_array     0x00000000080077d4        0x4
-                0x00000000080077d4                . = ALIGN (0x4)
+.fini_array     0x0000000008006fdc        0x4
+                0x0000000008006fdc                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00000000080077d4        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0000000008006fdc        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00000000080077d8                . = ALIGN (0x4)
-                0x00000000080077d8                _sidata = LOADADDR (.data)
+                0x0000000008006fe0                . = ALIGN (0x4)
+                0x0000000008006fe0                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x78 load address 0x00000000080077d8
+.data           0x0000000020000000       0x78 load address 0x0000000008006fe0
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -3918,11 +3926,11 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000020000078                . = ALIGN (0x4)
                 0x0000000020000078                _edata = .
 
-.igot.plt       0x0000000020000078        0x0 load address 0x0000000008007850
+.igot.plt       0x0000000020000078        0x0 load address 0x0000000008007058
  .igot.plt      0x0000000020000078        0x0 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x0000000020000078                . = ALIGN (0x4)
 
-.bss            0x0000000020000078     0x1454 load address 0x0000000008007850
+.bss            0x0000000020000078     0x1468 load address 0x0000000008007058
                 0x0000000020000078                _sbss = .
                 0x0000000020000078                __bss_start__ = _sbss
  *(.bss)
@@ -3930,21 +3938,15 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  *(.bss*)
  .bss._err_measure
                 0x0000000020000094        0x4 ./Drivers/src/kalman_filter.o
-                0x0000000020000094                _err_measure
  .bss._err_estimate
                 0x0000000020000098        0x4 ./Drivers/src/kalman_filter.o
-                0x0000000020000098                _err_estimate
  .bss._q        0x000000002000009c        0x4 ./Drivers/src/kalman_filter.o
-                0x000000002000009c                _q
  .bss._current_estimate
                 0x00000000200000a0        0x4 ./Drivers/src/kalman_filter.o
-                0x00000000200000a0                _current_estimate
  .bss._last_estimate
                 0x00000000200000a4        0x4 ./Drivers/src/kalman_filter.o
-                0x00000000200000a4                _last_estimate
  .bss._kalman_gain
                 0x00000000200000a8        0x4 ./Drivers/src/kalman_filter.o
-                0x00000000200000a8                _kalman_gain
  .bss.ucg       0x00000000200000ac       0xb4 ./Src/main.o
  .bss.time_initial
                 0x0000000020000160        0x4 ./Src/main.o
@@ -3958,73 +3960,73 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .bss.src2      0x0000000020000180       0x14 ./Src/main.o
  .bss.src3      0x0000000020000194       0x14 ./Src/main.o
  .bss.src4      0x00000000200001a8       0x14 ./Src/main.o
+ .bss.src5      0x00000000200001bc       0x14 ./Src/main.o
  .bss.time_total
-                0x00000000200001bc        0x4 ./Src/main.o
- .bss.temperature
-                0x00000000200001c0        0x1 ./Src/main.o
- .bss.humidity  0x00000000200001c1        0x1 ./Src/main.o
- .bss.temperature1
-                0x00000000200001c2        0x1 ./Src/main.o
- .bss.humidity1
-                0x00000000200001c3        0x1 ./Src/main.o
- .bss.Kanman_light
-                0x00000000200001c4        0x2 ./Src/main.o
- .bss.AdcValue  0x00000000200001c6        0x2 ./Src/main.o
-                0x00000000200001c6                AdcValue
- .bss.lightLevelAfterFilter
-                0x00000000200001c8        0x2 ./Src/main.o
- *fill*         0x00000000200001ca        0x2 
- .bss.dwTimeInit.1
-                0x00000000200001cc        0x4 ./Src/main.o
- .bss.dwTimeTotal.0
                 0x00000000200001d0        0x4 ./Src/main.o
+ .bss.temperature
+                0x00000000200001d4        0x1 ./Src/main.o
+ .bss.humidity  0x00000000200001d5        0x1 ./Src/main.o
+ .bss.temperature1
+                0x00000000200001d6        0x1 ./Src/main.o
+ .bss.humidity1
+                0x00000000200001d7        0x1 ./Src/main.o
+ .bss.Kanman_light
+                0x00000000200001d8        0x2 ./Src/main.o
+ .bss.AdcValue  0x00000000200001da        0x2 ./Src/main.o
+                0x00000000200001da                AdcValue
+ .bss.lightLevelAfterFilter
+                0x00000000200001dc        0x2 ./Src/main.o
+ *fill*         0x00000000200001de        0x2 
+ .bss.dwTimeInit.1
+                0x00000000200001e0        0x4 ./Src/main.o
+ .bss.dwTimeTotal.0
+                0x00000000200001e4        0x4 ./Src/main.o
  .bss.__sbrk_heap_end
-                0x00000000200001d4        0x4 ./Src/sysmem.o
+                0x00000000200001e8        0x4 ./Src/sysmem.o
  .bss.g_pTimerHandle
-                0x00000000200001d8      0x180 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x00000000200001ec      0x180 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
  .bss.g_wMilSecTickTimer
-                0x0000000020000358        0x4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+                0x000000002000036c        0x4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
  .bss.g_pUartQueueRx
-                0x000000002000035c        0x8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+                0x0000000020000370        0x8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
  .bss.fontQueue
-                0x0000000020000364       0x10 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000020000378       0x10 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  .bss.pQueueFont
-                0x0000000020000374     0x1000 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x0000000020000388     0x1000 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
  .bss.next.7562
-                0x0000000020001374        0x1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- *fill*         0x0000000020001375        0x3 
- .bss.__sf      0x0000000020001378      0x138 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
-                0x0000000020001378                __sf
- .bss.errno     0x00000000200014b0        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
-                0x00000000200014b0                errno
+                0x0000000020001388        0x1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ *fill*         0x0000000020001389        0x3 
+ .bss.__sf      0x000000002000138c      0x138 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
+                0x000000002000138c                __sf
+ .bss.errno     0x00000000200014c4        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
+                0x00000000200014c4                errno
  .bss.__lock___malloc_recursive_mutex
-                0x00000000200014b4        0x1 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x00000000200014b4                __lock___malloc_recursive_mutex
- *fill*         0x00000000200014b5        0x3 
+                0x00000000200014c8        0x1 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x00000000200014c8                __lock___malloc_recursive_mutex
+ *fill*         0x00000000200014c9        0x3 
  .bss.__malloc_free_list
-                0x00000000200014b8        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x00000000200014b8                __malloc_free_list
+                0x00000000200014cc        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x00000000200014cc                __malloc_free_list
  .bss.__malloc_sbrk_start
-                0x00000000200014bc        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x00000000200014bc                __malloc_sbrk_start
+                0x00000000200014d0        0x4 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x00000000200014d0                __malloc_sbrk_start
  *(COMMON)
- COMMON         0x00000000200014c0        0xc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
-                0x00000000200014c0                ucg_draw_str
-                0x00000000200014cc                . = ALIGN (0x4)
-                0x00000000200014cc                _ebss = .
-                0x00000000200014cc                __bss_end__ = _ebss
+ COMMON         0x00000000200014d4        0xc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+                0x00000000200014d4                ucg_draw_str
+                0x00000000200014e0                . = ALIGN (0x4)
+                0x00000000200014e0                _ebss = .
+                0x00000000200014e0                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x00000000200014cc      0x604 load address 0x0000000008007850
-                0x00000000200014d0                . = ALIGN (0x8)
- *fill*         0x00000000200014cc        0x4 
+                0x00000000200014e0      0x600 load address 0x0000000008007058
+                0x00000000200014e0                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
-                0x00000000200014d0                PROVIDE (_end = .)
-                0x00000000200016d0                . = (. + _Min_Heap_Size)
- *fill*         0x00000000200014d0      0x200 
-                0x0000000020001ad0                . = (. + _Min_Stack_Size)
- *fill*         0x00000000200016d0      0x400 
-                0x0000000020001ad0                . = ALIGN (0x8)
+                0x00000000200014e0                PROVIDE (_end = .)
+                0x00000000200016e0                . = (. + _Min_Heap_Size)
+ *fill*         0x00000000200014e0      0x200 
+                0x0000000020001ae0                . = (. + _Min_Stack_Size)
+ *fill*         0x00000000200016e0      0x400 
+                0x0000000020001ae0                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -4187,71 +4189,71 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .comment       0x00000000000000be       0x7c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
  .comment       0x00000000000000be       0x7c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
 
-.debug_info     0x0000000000000000    0x3ad66
+.debug_info     0x0000000000000000    0x3ade9
  .debug_info    0x0000000000000000      0x1e1 ./Drivers/src/kalman_filter.o
  .debug_info    0x00000000000001e1      0x590 ./Drivers/src/stm32f401re_gpio.o
  .debug_info    0x0000000000000771      0xce1 ./Drivers/src/stm32f401re_rcc.o
- .debug_info    0x0000000000001452     0x1ca2 ./Src/main.o
- .debug_info    0x00000000000030f4      0x168 ./Src/sysmem.o
- .debug_info    0x000000000000325c       0x23 ./Startup/startup_stm32f401retx.o
- .debug_info    0x000000000000327f      0x5bb D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_info    0x000000000000383a      0xc5d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
- .debug_info    0x0000000000004497      0xb9e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
- .debug_info    0x0000000000005035     0x1c73 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
- .debug_info    0x0000000000006ca8      0x922 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
- .debug_info    0x00000000000075ca      0xafd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
- .debug_info    0x00000000000080c7      0xb11 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_info    0x0000000000008bd8     0x333f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
- .debug_info    0x000000000000bf17     0x329d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
- .debug_info    0x000000000000f1b4     0x2b08 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
- .debug_info    0x0000000000011cbc     0x324b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
- .debug_info    0x0000000000014f07     0x3272 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
- .debug_info    0x0000000000018179     0x3178 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
- .debug_info    0x000000000001b2f1     0x303e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
- .debug_info    0x000000000001e32f     0x43ab D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_info    0x00000000000226da     0x3856 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
- .debug_info    0x0000000000025f30     0x3222 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
- .debug_info    0x0000000000029152     0x3056 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
- .debug_info    0x000000000002c1a8     0x43df D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
- .debug_info    0x0000000000030587     0x3231 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
- .debug_info    0x00000000000337b8      0x339 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
- .debug_info    0x0000000000033af1      0x2bd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
- .debug_info    0x0000000000033dae      0x9d4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
- .debug_info    0x0000000000034782     0x315a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
- .debug_info    0x00000000000378dc     0x348a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+ .debug_info    0x0000000000001452     0x1d25 ./Src/main.o
+ .debug_info    0x0000000000003177      0x168 ./Src/sysmem.o
+ .debug_info    0x00000000000032df       0x23 ./Startup/startup_stm32f401retx.o
+ .debug_info    0x0000000000003302      0x5bb D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_info    0x00000000000038bd      0xc5d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+ .debug_info    0x000000000000451a      0xb9e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+ .debug_info    0x00000000000050b8     0x1c73 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+ .debug_info    0x0000000000006d2b      0x922 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_info    0x000000000000764d      0xafd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_info    0x000000000000814a      0xb11 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_info    0x0000000000008c5b     0x333f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+ .debug_info    0x000000000000bf9a     0x329d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
+ .debug_info    0x000000000000f237     0x2b08 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+ .debug_info    0x0000000000011d3f     0x324b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
+ .debug_info    0x0000000000014f8a     0x3272 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+ .debug_info    0x00000000000181fc     0x3178 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+ .debug_info    0x000000000001b374     0x303e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
+ .debug_info    0x000000000001e3b2     0x43ab D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_info    0x000000000002275d     0x3856 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
+ .debug_info    0x0000000000025fb3     0x3222 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
+ .debug_info    0x00000000000291d5     0x3056 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
+ .debug_info    0x000000000002c22b     0x43df D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
+ .debug_info    0x000000000003060a     0x3231 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+ .debug_info    0x000000000003383b      0x339 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+ .debug_info    0x0000000000033b74      0x2bd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
+ .debug_info    0x0000000000033e31      0x9d4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+ .debug_info    0x0000000000034805     0x315a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+ .debug_info    0x000000000003795f     0x348a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
 
-.debug_abbrev   0x0000000000000000     0x32a9
- .debug_abbrev  0x0000000000000000       0xe8 ./Drivers/src/kalman_filter.o
- .debug_abbrev  0x00000000000000e8      0x1af ./Drivers/src/stm32f401re_gpio.o
- .debug_abbrev  0x0000000000000297      0x20d ./Drivers/src/stm32f401re_rcc.o
- .debug_abbrev  0x00000000000004a4      0x434 ./Src/main.o
- .debug_abbrev  0x00000000000008d8       0xbc ./Src/sysmem.o
- .debug_abbrev  0x0000000000000994       0x12 ./Startup/startup_stm32f401retx.o
- .debug_abbrev  0x00000000000009a6      0x138 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_abbrev  0x0000000000000ade      0x194 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
- .debug_abbrev  0x0000000000000c72      0x196 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
- .debug_abbrev  0x0000000000000e08      0x19f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
- .debug_abbrev  0x0000000000000fa7      0x29a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
- .debug_abbrev  0x0000000000001241      0x24a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
- .debug_abbrev  0x000000000000148b      0x2ba D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_abbrev  0x0000000000001745      0x202 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
- .debug_abbrev  0x0000000000001947      0x18b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
- .debug_abbrev  0x0000000000001ad2       0xf5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
- .debug_abbrev  0x0000000000001bc7      0x19e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
- .debug_abbrev  0x0000000000001d65      0x1dc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
- .debug_abbrev  0x0000000000001f41      0x191 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
- .debug_abbrev  0x00000000000020d2      0x14e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
- .debug_abbrev  0x0000000000002220      0x2fc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_abbrev  0x000000000000251c      0x1c6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
- .debug_abbrev  0x00000000000026e2      0x175 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
- .debug_abbrev  0x0000000000002857      0x148 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
- .debug_abbrev  0x000000000000299f       0x83 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
- .debug_abbrev  0x0000000000002a22      0x1a3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
- .debug_abbrev  0x0000000000002bc5      0x12a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
- .debug_abbrev  0x0000000000002cef       0xce D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
- .debug_abbrev  0x0000000000002dbd      0x187 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
- .debug_abbrev  0x0000000000002f44      0x173 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
- .debug_abbrev  0x00000000000030b7      0x1f2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+.debug_abbrev   0x0000000000000000     0x3293
+ .debug_abbrev  0x0000000000000000       0xe4 ./Drivers/src/kalman_filter.o
+ .debug_abbrev  0x00000000000000e4      0x1af ./Drivers/src/stm32f401re_gpio.o
+ .debug_abbrev  0x0000000000000293      0x20d ./Drivers/src/stm32f401re_rcc.o
+ .debug_abbrev  0x00000000000004a0      0x422 ./Src/main.o
+ .debug_abbrev  0x00000000000008c2       0xbc ./Src/sysmem.o
+ .debug_abbrev  0x000000000000097e       0x12 ./Startup/startup_stm32f401retx.o
+ .debug_abbrev  0x0000000000000990      0x138 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_abbrev  0x0000000000000ac8      0x194 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+ .debug_abbrev  0x0000000000000c5c      0x196 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+ .debug_abbrev  0x0000000000000df2      0x19f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+ .debug_abbrev  0x0000000000000f91      0x29a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_abbrev  0x000000000000122b      0x24a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_abbrev  0x0000000000001475      0x2ba D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_abbrev  0x000000000000172f      0x202 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+ .debug_abbrev  0x0000000000001931      0x18b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
+ .debug_abbrev  0x0000000000001abc       0xf5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+ .debug_abbrev  0x0000000000001bb1      0x19e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
+ .debug_abbrev  0x0000000000001d4f      0x1dc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+ .debug_abbrev  0x0000000000001f2b      0x191 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+ .debug_abbrev  0x00000000000020bc      0x14e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
+ .debug_abbrev  0x000000000000220a      0x2fc D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_abbrev  0x0000000000002506      0x1c6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
+ .debug_abbrev  0x00000000000026cc      0x175 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
+ .debug_abbrev  0x0000000000002841      0x148 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
+ .debug_abbrev  0x0000000000002989       0x83 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
+ .debug_abbrev  0x0000000000002a0c      0x1a3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+ .debug_abbrev  0x0000000000002baf      0x12a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+ .debug_abbrev  0x0000000000002cd9       0xce D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
+ .debug_abbrev  0x0000000000002da7      0x187 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+ .debug_abbrev  0x0000000000002f2e      0x173 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+ .debug_abbrev  0x00000000000030a1      0x1f2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
 
 .debug_aranges  0x0000000000000000     0x1230
  .debug_aranges
@@ -4318,7 +4320,7 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000000001190       0xa0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
 
 .debug_rnglists
-                0x0000000000000000      0x2dc
+                0x0000000000000000      0x2dd
  .debug_rnglists
                 0x0000000000000000       0x38 ./Drivers/src/kalman_filter.o
  .debug_rnglists
@@ -4326,13 +4328,13 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x0000000000000095      0x12e ./Drivers/src/stm32f401re_rcc.o
  .debug_rnglists
-                0x00000000000001c3       0xed ./Src/main.o
+                0x00000000000001c3       0xee ./Src/main.o
  .debug_rnglists
-                0x00000000000002b0       0x13 ./Src/sysmem.o
+                0x00000000000002b1       0x13 ./Src/sysmem.o
  .debug_rnglists
-                0x00000000000002c3       0x19 ./Startup/startup_stm32f401retx.o
+                0x00000000000002c4       0x19 ./Startup/startup_stm32f401retx.o
 
-.debug_macro    0x0000000000000000    0x1c4d5
+.debug_macro    0x0000000000000000    0x1c4df
  .debug_macro   0x0000000000000000       0xec ./Drivers/src/kalman_filter.o
  .debug_macro   0x00000000000000ec      0xab4 ./Drivers/src/kalman_filter.o
  .debug_macro   0x0000000000000ba0       0x22 ./Drivers/src/kalman_filter.o
@@ -4369,186 +4371,186 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000000000000ab7b      0x1de ./Drivers/src/stm32f401re_gpio.o
  .debug_macro   0x000000000000ad59      0x185 ./Drivers/src/stm32f401re_rcc.o
  .debug_macro   0x000000000000aede      0x4f3 ./Drivers/src/stm32f401re_rcc.o
- .debug_macro   0x000000000000b3d1      0x39c ./Src/main.o
- .debug_macro   0x000000000000b76d       0x61 ./Src/main.o
- .debug_macro   0x000000000000b7ce       0x10 ./Src/main.o
- .debug_macro   0x000000000000b7de       0x35 ./Src/main.o
- .debug_macro   0x000000000000b813       0x20 ./Src/main.o
- .debug_macro   0x000000000000b833      0x4f9 ./Src/main.o
- .debug_macro   0x000000000000bd2c       0x1c ./Src/main.o
- .debug_macro   0x000000000000bd48       0x10 ./Src/main.o
- .debug_macro   0x000000000000bd58       0x1c ./Src/main.o
- .debug_macro   0x000000000000bd74       0x16 ./Src/main.o
- .debug_macro   0x000000000000bd8a      0x147 ./Src/main.o
- .debug_macro   0x000000000000bed1      0x2ba ./Src/main.o
- .debug_macro   0x000000000000c18b      0x36c ./Src/main.o
- .debug_macro   0x000000000000c4f7       0x22 ./Src/main.o
- .debug_macro   0x000000000000c519       0x7c ./Src/main.o
- .debug_macro   0x000000000000c595      0x301 ./Src/main.o
- .debug_macro   0x000000000000c896       0x34 ./Src/main.o
- .debug_macro   0x000000000000c8ca      0xcad ./Src/main.o
- .debug_macro   0x000000000000d577      0x741 ./Src/main.o
- .debug_macro   0x000000000000dcb8       0xff ./Src/sysmem.o
- .debug_macro   0x000000000000ddb7      0x23c ./Src/sysmem.o
- .debug_macro   0x000000000000dff3       0xce D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000e0c1      0xa66 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000eb27       0x6b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000eb92       0x3b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000ebcd       0x22 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000ebef       0x8e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000ec7d       0xef D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000ed6c       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000eda0       0x26 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000edc6      0xe43 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x000000000000fc09     0x8018 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_macro   0x0000000000017c21      0x14d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
- .debug_macro   0x0000000000017d6e      0xca7 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
- .debug_macro   0x0000000000018a15      0x64a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
- .debug_macro   0x000000000001905f       0xd5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
- .debug_macro   0x0000000000019134      0x2b4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
- .debug_macro   0x00000000000193e8       0xe4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
- .debug_macro   0x00000000000194cc      0x73b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
- .debug_macro   0x0000000000019c07       0xe3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
- .debug_macro   0x0000000000019cea       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
- .debug_macro   0x0000000000019d06      0x644 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
- .debug_macro   0x000000000001a34a       0x16 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
- .debug_macro   0x000000000001a360       0xe3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
- .debug_macro   0x000000000001a443       0x76 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
- .debug_macro   0x000000000001a4b9      0x170 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
- .debug_macro   0x000000000001a629      0x2f4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
- .debug_macro   0x000000000001a91d      0x10a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_macro   0x000000000001aa27      0x16a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_macro   0x000000000001ab91       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_macro   0x000000000001abad       0x7c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_macro   0x000000000001ac29      0x223 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_macro   0x000000000001ae4c      0x141 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
- .debug_macro   0x000000000001af8d      0x174 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
- .debug_macro   0x000000000001b101       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
- .debug_macro   0x000000000001b185       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
- .debug_macro   0x000000000001b209       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
- .debug_macro   0x000000000001b28d       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
- .debug_macro   0x000000000001b311       0x88 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
- .debug_macro   0x000000000001b399       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
- .debug_macro   0x000000000001b41d      0x15a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b577       0x46 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b5bd       0x18 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b5d5       0x3c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b611       0x52 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b663       0x1f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b682       0x43 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b6c5       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b6e5      0x1a3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001b888      0x330 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001bbb8       0x35 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_macro   0x000000000001bbed      0x145 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
- .debug_macro   0x000000000001bd32       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
- .debug_macro   0x000000000001bdb6       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
- .debug_macro   0x000000000001be3a       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
- .debug_macro   0x000000000001bebe       0xbd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
- .debug_macro   0x000000000001bf7b       0xc2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
- .debug_macro   0x000000000001c03d       0x16 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
- .debug_macro   0x000000000001c053       0x72 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
- .debug_macro   0x000000000001c0c5       0x10 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
- .debug_macro   0x000000000001c0d5       0xdb D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
- .debug_macro   0x000000000001c1b0      0x21d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
- .debug_macro   0x000000000001c3cd       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
- .debug_macro   0x000000000001c451       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+ .debug_macro   0x000000000000b3d1      0x3a6 ./Src/main.o
+ .debug_macro   0x000000000000b777       0x61 ./Src/main.o
+ .debug_macro   0x000000000000b7d8       0x10 ./Src/main.o
+ .debug_macro   0x000000000000b7e8       0x35 ./Src/main.o
+ .debug_macro   0x000000000000b81d       0x20 ./Src/main.o
+ .debug_macro   0x000000000000b83d      0x4f9 ./Src/main.o
+ .debug_macro   0x000000000000bd36       0x1c ./Src/main.o
+ .debug_macro   0x000000000000bd52       0x10 ./Src/main.o
+ .debug_macro   0x000000000000bd62       0x1c ./Src/main.o
+ .debug_macro   0x000000000000bd7e       0x16 ./Src/main.o
+ .debug_macro   0x000000000000bd94      0x147 ./Src/main.o
+ .debug_macro   0x000000000000bedb      0x2ba ./Src/main.o
+ .debug_macro   0x000000000000c195      0x36c ./Src/main.o
+ .debug_macro   0x000000000000c501       0x22 ./Src/main.o
+ .debug_macro   0x000000000000c523       0x7c ./Src/main.o
+ .debug_macro   0x000000000000c59f      0x301 ./Src/main.o
+ .debug_macro   0x000000000000c8a0       0x34 ./Src/main.o
+ .debug_macro   0x000000000000c8d4      0xcad ./Src/main.o
+ .debug_macro   0x000000000000d581      0x741 ./Src/main.o
+ .debug_macro   0x000000000000dcc2       0xff ./Src/sysmem.o
+ .debug_macro   0x000000000000ddc1      0x23c ./Src/sysmem.o
+ .debug_macro   0x000000000000dffd       0xce D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000e0cb      0xa66 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000eb31       0x6b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000eb9c       0x3b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000ebd7       0x22 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000ebf9       0x8e D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000ec87       0xef D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000ed76       0x34 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000edaa       0x26 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000edd0      0xe43 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x000000000000fc13     0x8018 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_macro   0x0000000000017c2b      0x14d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+ .debug_macro   0x0000000000017d78      0xca7 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+ .debug_macro   0x0000000000018a1f      0x64a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+ .debug_macro   0x0000000000019069       0xd5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+ .debug_macro   0x000000000001913e      0x2b4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+ .debug_macro   0x00000000000193f2       0xe4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+ .debug_macro   0x00000000000194d6      0x73b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+ .debug_macro   0x0000000000019c11       0xe3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_macro   0x0000000000019cf4       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_macro   0x0000000000019d10      0x644 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_macro   0x000000000001a354       0x16 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_macro   0x000000000001a36a       0xe3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_macro   0x000000000001a44d       0x76 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_macro   0x000000000001a4c3      0x170 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_macro   0x000000000001a633      0x2f4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_macro   0x000000000001a927      0x10a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_macro   0x000000000001aa31      0x16a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_macro   0x000000000001ab9b       0x1c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_macro   0x000000000001abb7       0x7c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_macro   0x000000000001ac33      0x223 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_macro   0x000000000001ae56      0x141 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+ .debug_macro   0x000000000001af97      0x174 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+ .debug_macro   0x000000000001b10b       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
+ .debug_macro   0x000000000001b18f       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+ .debug_macro   0x000000000001b213       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
+ .debug_macro   0x000000000001b297       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+ .debug_macro   0x000000000001b31b       0x88 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+ .debug_macro   0x000000000001b3a3       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
+ .debug_macro   0x000000000001b427      0x15a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b581       0x46 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b5c7       0x18 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b5df       0x3c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b61b       0x52 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b66d       0x1f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b68c       0x43 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b6cf       0x20 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b6ef      0x1a3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001b892      0x330 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001bbc2       0x35 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_macro   0x000000000001bbf7      0x145 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
+ .debug_macro   0x000000000001bd3c       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
+ .debug_macro   0x000000000001bdc0       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
+ .debug_macro   0x000000000001be44       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
+ .debug_macro   0x000000000001bec8       0xbd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+ .debug_macro   0x000000000001bf85       0xc2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+ .debug_macro   0x000000000001c047       0x16 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+ .debug_macro   0x000000000001c05d       0x72 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
+ .debug_macro   0x000000000001c0cf       0x10 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
+ .debug_macro   0x000000000001c0df       0xdb D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+ .debug_macro   0x000000000001c1ba      0x21d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+ .debug_macro   0x000000000001c3d7       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+ .debug_macro   0x000000000001c45b       0x84 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
 
-.debug_line     0x0000000000000000     0xc51e
+.debug_line     0x0000000000000000     0xc53a
  .debug_line    0x0000000000000000      0x62e ./Drivers/src/kalman_filter.o
  .debug_line    0x000000000000062e      0x74a ./Drivers/src/stm32f401re_gpio.o
  .debug_line    0x0000000000000d78      0xcde ./Drivers/src/stm32f401re_rcc.o
- .debug_line    0x0000000000001a56      0xeba ./Src/main.o
- .debug_line    0x0000000000002910      0x57e ./Src/sysmem.o
- .debug_line    0x0000000000002e8e       0x7b ./Startup/startup_stm32f401retx.o
- .debug_line    0x0000000000002f09      0x4a0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
- .debug_line    0x00000000000033a9      0x84b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
- .debug_line    0x0000000000003bf4      0x7f1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
- .debug_line    0x00000000000043e5      0xd2f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
- .debug_line    0x0000000000005114      0x684 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
- .debug_line    0x0000000000005798      0x841 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
- .debug_line    0x0000000000005fd9      0x72b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
- .debug_line    0x0000000000006704      0x5cd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
- .debug_line    0x0000000000006cd1      0x4c6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
- .debug_line    0x0000000000007197      0x420 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
- .debug_line    0x00000000000075b7      0x521 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
- .debug_line    0x0000000000007ad8      0x512 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
- .debug_line    0x0000000000007fea      0x48a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
- .debug_line    0x0000000000008474      0x403 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
- .debug_line    0x0000000000008877      0x971 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
- .debug_line    0x00000000000091e8      0x55c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
- .debug_line    0x0000000000009744      0x498 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
- .debug_line    0x0000000000009bdc      0x400 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
- .debug_line    0x0000000000009fdc      0x3e1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
- .debug_line    0x000000000000a3bd      0x5d4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
- .debug_line    0x000000000000a991      0x532 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
- .debug_line    0x000000000000aec3      0x46f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
- .debug_line    0x000000000000b332      0x7a5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
- .debug_line    0x000000000000bad7      0x4c1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
- .debug_line    0x000000000000bf98      0x586 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+ .debug_line    0x0000000000001a56      0xed6 ./Src/main.o
+ .debug_line    0x000000000000292c      0x57e ./Src/sysmem.o
+ .debug_line    0x0000000000002eaa       0x7b ./Startup/startup_stm32f401retx.o
+ .debug_line    0x0000000000002f25      0x4a0 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_line    0x00000000000033c5      0x84b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+ .debug_line    0x0000000000003c10      0x7f1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+ .debug_line    0x0000000000004401      0xd2f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+ .debug_line    0x0000000000005130      0x684 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_line    0x00000000000057b4      0x841 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_line    0x0000000000005ff5      0x72b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_line    0x0000000000006720      0x5cd D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+ .debug_line    0x0000000000006ced      0x4c6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
+ .debug_line    0x00000000000071b3      0x420 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+ .debug_line    0x00000000000075d3      0x521 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
+ .debug_line    0x0000000000007af4      0x512 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+ .debug_line    0x0000000000008006      0x48a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+ .debug_line    0x0000000000008490      0x403 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
+ .debug_line    0x0000000000008893      0x971 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_line    0x0000000000009204      0x55c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
+ .debug_line    0x0000000000009760      0x498 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
+ .debug_line    0x0000000000009bf8      0x400 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
+ .debug_line    0x0000000000009ff8      0x3e1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
+ .debug_line    0x000000000000a3d9      0x5d4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+ .debug_line    0x000000000000a9ad      0x532 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+ .debug_line    0x000000000000aedf      0x46f D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
+ .debug_line    0x000000000000b34e      0x7a5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+ .debug_line    0x000000000000baf3      0x4c1 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+ .debug_line    0x000000000000bfb4      0x586 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
 
-.debug_str      0x0000000000000000    0x57a2e
+.debug_str      0x0000000000000000    0x57a33
  .debug_str     0x0000000000000000     0x6de7 ./Drivers/src/kalman_filter.o
                                        0x6eff (size before relaxing)
  .debug_str     0x0000000000006de7    0x32cec ./Drivers/src/stm32f401re_gpio.o
                                       0x35fb9 (size before relaxing)
  .debug_str     0x0000000000039ad3     0x2dae ./Drivers/src/stm32f401re_rcc.o
                                       0x38262 (size before relaxing)
- .debug_str     0x000000000003c881     0xe1f7 ./Src/main.o
-                                      0x49734 (size before relaxing)
- .debug_str     0x000000000004aa78      0x4d7 ./Src/sysmem.o
+ .debug_str     0x000000000003c881     0xe1fc ./Src/main.o
+                                      0x4979b (size before relaxing)
+ .debug_str     0x000000000004aa7d      0x4d7 ./Src/sysmem.o
                                        0x6052 (size before relaxing)
- .debug_str     0x000000000004af4f       0x2f ./Startup/startup_stm32f401retx.o
+ .debug_str     0x000000000004af54       0x2f ./Startup/startup_stm32f401retx.o
                                          0x51 (size before relaxing)
- .debug_str     0x000000000004af7e      0x88d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
+ .debug_str     0x000000000004af83      0x88d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(system_stm32f4xx.o)
                                       0x3583e (size before relaxing)
- .debug_str     0x000000000004b80b     0x1d4d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
+ .debug_str     0x000000000004b810     0x1d4d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_adc.o)
                                       0x3c852 (size before relaxing)
- .debug_str     0x000000000004d558      0x32c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
+ .debug_str     0x000000000004d55d      0x32c D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_i2c.o)
                                       0x3af28 (size before relaxing)
- .debug_str     0x000000000004d884      0xa5b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
+ .debug_str     0x000000000004d889      0xa5b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_tim.o)
                                       0x3a911 (size before relaxing)
- .debug_str     0x000000000004e2df      0x599 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
+ .debug_str     0x000000000004e2e4      0x599 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(timer.o)
                                       0x39451 (size before relaxing)
- .debug_str     0x000000000004e878     0x15d2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
+ .debug_str     0x000000000004e87d     0x15d2 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(temhumsensor.o)
                                       0x3cc44 (size before relaxing)
- .debug_str     0x000000000004fe4a     0x1df4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
+ .debug_str     0x000000000004fe4f     0x1df4 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(serial.o)
                                       0x3cca1 (size before relaxing)
- .debug_str     0x0000000000051c3e     0x42d8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
+ .debug_str     0x0000000000051c43     0x42d8 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(Ucglib.o)
                                       0x4067c (size before relaxing)
- .debug_str     0x0000000000055f16       0x76 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
+ .debug_str     0x0000000000055f1b       0x76 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_box.o)
                                        0x9c13 (size before relaxing)
- .debug_str     0x0000000000055f8c       0x48 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
+ .debug_str     0x0000000000055f91       0x48 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_ccs.o)
                                        0x97ef (size before relaxing)
- .debug_str     0x0000000000055fd4       0xaf D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
+ .debug_str     0x0000000000055fd9       0xaf D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_default_cb.o)
                                        0x9c41 (size before relaxing)
- .debug_str     0x0000000000056083      0x135 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
+ .debug_str     0x0000000000056088      0x135 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_ic_st7735.o)
                                        0x9ce5 (size before relaxing)
- .debug_str     0x00000000000561b8       0xce D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
+ .debug_str     0x00000000000561bd       0xce D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_msg_api.o)
                                        0x9c5b (size before relaxing)
- .debug_str     0x0000000000056286       0x68 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
+ .debug_str     0x000000000005628b       0x68 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_dev_tft_128x128_st7735.o)
                                        0x9c0a (size before relaxing)
- .debug_str     0x00000000000562ee      0xcae D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
+ .debug_str     0x00000000000562f3      0xcae D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_font.o)
                                        0xd07e (size before relaxing)
- .debug_str     0x0000000000056f9c       0x35 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
+ .debug_str     0x0000000000056fa1       0x35 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_init.o)
                                        0xcb75 (size before relaxing)
- .debug_str     0x0000000000056fd1       0x8d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
+ .debug_str     0x0000000000056fd6       0x8d D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_line.o)
                                        0x9c1a (size before relaxing)
- .debug_str     0x000000000005705e       0x2b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
+ .debug_str     0x0000000000057063       0x2b D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel.o)
                                        0x9bc5 (size before relaxing)
- .debug_str     0x0000000000057089       0x27 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
+ .debug_str     0x000000000005708e       0x27 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_pixel_font_data.o)
                                        0x9785 (size before relaxing)
- .debug_str     0x00000000000570b0       0xc6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
+ .debug_str     0x00000000000570b5       0xc6 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_rotate.o)
                                        0x9fb3 (size before relaxing)
- .debug_str     0x0000000000057176       0x93 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
+ .debug_str     0x000000000005717b       0x93 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(buff.o)
                                       0x35751 (size before relaxing)
- .debug_str     0x0000000000057209       0xb3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
+ .debug_str     0x000000000005720e       0xb3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(utilities.o)
                                        0x3d14 (size before relaxing)
- .debug_str     0x00000000000572bc      0x4c3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
+ .debug_str     0x00000000000572c1      0x4c3 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(stm32f401re_usart.o)
                                       0x3a79e (size before relaxing)
- .debug_str     0x000000000005777f       0xa5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
+ .debug_str     0x0000000000057784       0xa5 D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_clip.o)
                                        0x9c32 (size before relaxing)
- .debug_str     0x0000000000057824      0x20a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
+ .debug_str     0x0000000000057829      0x20a D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm\libLibraries.a(ucg_com_msg_api.o)
                                        0x9ddf (size before relaxing)
 
 .debug_frame    0x0000000000000000     0x5174
