@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-                    
+                            
+    
+    
     
     
     
     <instance id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1044120259;com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1044120259.1895284585;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.2053131502.1727074137;com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.643413885">
-                                        
+                                                        
+        
+        
         
         
         
         <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+            <includePath path="#undef _REENTRANT" removed="true"/>
             <includePath path="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
             <includePath path="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
             <includePath path="C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-            <includePath path="#undef _REENTRANT" removed="true"/>
             <definedSymbol symbol="__STDC__=1"/>
             <definedSymbol symbol="__STDC_VERSION__=201710L"/>
             <definedSymbol symbol="__STDC_UTF_16__=1"/>
@@ -374,12 +378,16 @@
             <definedSymbol symbol="__declspec(x)=__attribute__((x))"/>
             <definedSymbol symbol="__DECIMAL_BID_FORMAT__=1"/>
         </collector>
-                                    
+                                                    
+    
+    
     
     
     
     </instance>
-                
+                        
+
+
 
 
 

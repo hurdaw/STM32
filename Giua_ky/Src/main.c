@@ -21,12 +21,10 @@
 #define ADC_PIN             			    GPIO_Pin_5
 #define Tim_Period      			  		8399
 
-
 /*Defined SPI **********************************************************************/
 
 #define SPI1_CS_PORT           				 GPIOB
 #define SPI1_CS_PIN            				 GPIO_Pin_6
-
 
 #define SPI1_RST_PORT          				 GPIOC
 #define SPI1_RST_PIN           				 GPIO_Pin_7
@@ -125,12 +123,9 @@ uint16_t LightSensor_AdcPollingRead(void);
 uint16_t Kanman_Light(uint16_t lightLevel);
 static void LedControl_TimerOCSetPwm(uint32_t Compare);
 static void ABL_Process(void);
-static void TemHumSensor_readRegister(
-		uint8_t address,
-	    uint8_t* pAddressRegister,
-	    uint8_t* pDataRegister,
-	    uint8_t Length_Data,
-	    uint16_t delay);
+static void TemHumSensor_readRegister(uint8_t address,
+		uint8_t *pAddressRegister, uint8_t *pDataRegister, uint8_t Length_Data,
+		uint16_t delay);
 void processGetValueSensor(void);
 uint32_t GetTemp_Sensor(void);
 uint32_t GetHumi_Sensor(void);
@@ -152,11 +147,10 @@ static uint8_t temperature, humidity;
 static uint8_t temperature1, humidity1;
 //static uint8_t temperature2, humidity2;
 /* ----------------------------------modified 0604-----------------------------------------------*/
-static uint16_t Kanman_light=0;
-uint16_t AdcValue=0;
+static uint16_t Kanman_light = 0;
+uint16_t AdcValue = 0;
 static uint16_t lightLevelAfterFilter = 0;
-static void Led_Init_red1(void)
-{
+static void Led_Init_red1(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(LEDREDA1Control_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = LEDREDA1_GPIO_PIN;
@@ -167,8 +161,7 @@ static void Led_Init_red1(void)
 	GPIO_Init(LEDREDA1_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void Led_Init_red2(void)
-{
+static void Led_Init_red2(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(LEDREDB13Control_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = LEDREDB13_GPIO_PIN;
@@ -179,8 +172,7 @@ static void Led_Init_red2(void)
 	GPIO_Init(LEDREDB13_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void Led_Init_blue1(void)
-{
+static void Led_Init_blue1(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(LEDREDA3Control_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = LEDREDA3_GPIO_PIN;
@@ -191,8 +183,7 @@ static void Led_Init_blue1(void)
 	GPIO_Init(LEDREDA3_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void Led_Init_blue2(void)
-{
+static void Led_Init_blue2(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(LEDREDA10Control_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = LEDREDA10_GPIO_PIN;
@@ -203,8 +194,7 @@ static void Led_Init_blue2(void)
 	GPIO_Init(LEDREDA10_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void Button_Init(void)
-{
+static void Button_Init(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(BUTTONControl_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = BUTTON_GPIO_PIN;
@@ -214,8 +204,7 @@ static void Button_Init(void)
 	GPIO_Init(BUTTON_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void Button_Init_b3(void)
-{
+static void Button_Init_b3(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(BUTTONA4Control_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = BUTTONA4_GPIO_PIN;
@@ -225,8 +214,7 @@ static void Button_Init_b3(void)
 	GPIO_Init(BUTTONA4_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void Button_Init_b4(void)
-{
+static void Button_Init_b4(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(BUTTONB0Control_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = BUTTONB0_GPIO_PIN;
@@ -236,8 +224,7 @@ static void Button_Init_b4(void)
 	GPIO_Init(BUTTONB0_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void Buzzer_Init(void)
-{
+static void Buzzer_Init(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(BUZZERControl_SetClock, ENABLE);
 	GPIO_InitStructure.GPIO_Pin = BUZZER_GPIO_PIN;
@@ -248,20 +235,17 @@ static void Buzzer_Init(void)
 	GPIO_Init(BUZZER_GPIO_PORT, &GPIO_InitStructure);
 }
 
-static void LEDControl_SetStatus(GPIO_TypeDef* GPIOx, uint8_t GPIO_PIN, uint8_t Status)
-{
-	if (Status == GPIO_PIN_SET)
-	{
+static void LEDControl_SetStatus(GPIO_TypeDef *GPIOx, uint8_t GPIO_PIN,
+		uint8_t Status) {
+	if (Status == GPIO_PIN_SET) {
 		GPIOx->BSRRL |= 1 << GPIO_PIN;
 	}
-	if (Status == GPIO_PIN_RESET)
-	{
+	if (Status == GPIO_PIN_RESET) {
 		GPIOx->BSRRH |= 1 << GPIO_PIN;
 	}
 }
 
-static uint8_t ButtonRead_Status(GPIO_TypeDef* GPIOx, uint32_t GPIO_PIN)
-{
+static uint8_t ButtonRead_Status(GPIO_TypeDef *GPIOx, uint32_t GPIO_PIN) {
 	uint32_t Read_Pin;
 	Read_Pin = (GPIOx->IDR) >> GPIO_PIN;
 	Read_Pin = Read_Pin & 0x01;
@@ -269,22 +253,20 @@ static uint8_t ButtonRead_Status(GPIO_TypeDef* GPIOx, uint32_t GPIO_PIN)
 	return Read_Pin;
 }
 
-static void BuzzerControl_SetStatus(GPIO_TypeDef* GPIOx, uint8_t GPIO_PIN, uint8_t Status)
-{
-	if (Status == GPIO_PIN_SET)
-	{
+static void BuzzerControl_SetStatus(GPIO_TypeDef *GPIOx, uint8_t GPIO_PIN,
+		uint8_t Status) {
+	if (Status == GPIO_PIN_SET) {
 		GPIOx->BSRRL |= 1 << GPIO_PIN;
 	}
-	if (Status == GPIO_PIN_RESET)
-	{
+	if (Status == GPIO_PIN_RESET) {
 		GPIOx->BSRRH |= 1 << GPIO_PIN;
 	}
 }
 
-
-int main(void)
-{
+int main(void) {
 	AppCommon();
+//	AppInitCommon();
+
 	Led_Init_red1();
 	Led_Init_red2();
 	Led_Init_blue1();
@@ -293,12 +275,14 @@ int main(void)
 	Button_Init();
 	Button_Init_b3();
 	Button_Init_b4();
-
-	while(1)
-	{
+	int timeStart = 0; // Thời điểm bắt đầu nhấn nút
+	int isButtonPressed = 0; // Cờ kiểm tra xem nút đã được nhấn hay chưa
+	int cnt = 0;
+	int cnt1 = 0;
+	while (1) {
 		processGetValueSensor();
 		processTimerScheduler();
-
+//		ABL_Process();
 
 //		while (ButtonRead_Status(BUTTON_GPIO_PORT, BUTTON_PIN3) == 0) {
 //			BuzzerControl_SetStatus(BUZZER_GPIO_PORT, BUZZER_PIN9, 1);
@@ -330,20 +314,74 @@ int main(void)
 //			LEDControl_SetStatus(LEDREDA10_GPIO_PORT, LEDREDA10_PIN, 1);
 //			delay_ms(4000);
 //		}
-		while(ButtonRead_Status(BUTTONA4_GPIO_PORT, BUTTONA4_PIN) == 0){
-			int time=GetMilSecTick(), timeCurrent=0;
-			if(time-timeCurrent>=4000){
-				timeCurrent=GetMilSecTick();
-				LEDControl_SetStatus(LEDREDA3_GPIO_PORT, LEDREDA3_PIN, 1);
-				LEDControl_SetStatus(LEDREDA10_GPIO_PORT, LEDREDA10_PIN, 1);
+//		while(ButtonRead_Status(BUTTONA4_GPIO_PORT, BUTTONA4_PIN) == 0){
+//			int time=GetMilSecTick(), timeCurrent=0;
+//			if(time-timeCurrent>=4000){
+//				timeCurrent=GetMilSecTick();
+//				LEDControl_SetStatus(LEDREDA3_GPIO_PORT, LEDREDA3_PIN, 1);
+//				LEDControl_SetStatus(LEDREDA10_GPIO_PORT, LEDREDA10_PIN, 1);
+//			}
+//		}
+//		 if(ButtonRead_Status(BUTTONA4_GPIO_PORT, BUTTONA4_PIN) == 0) { // Nếu nút được nhấn
+//		        if(!isButtonPressed) { // Nếu đây là lần đầu nút được nhấn
+//		            isButtonPressed = 1; // Đặt cờ nhấn nút
+//		            timeStart = GetMilSecTick(); // Lấy thời gian hiện tại
+//		        }
+//
+//		        if((GetMilSecTick() - timeStart >= 4000) && isButtonPressed) { // Sau 4 giây
+//		            // Bật đèn LED
+//		            LEDControl_SetStatus(LEDREDA3_GPIO_PORT, LEDREDA3_PIN, 1);
+//		            LEDControl_SetStatus(LEDREDA10_GPIO_PORT, LEDREDA10_PIN, 1);
+//		            break; // Thoát khỏi vòng lặp sau khi bật đèn
+//		        }
+//		    } else {
+//		        isButtonPressed = 0; // Nếu nút không được nhấn, reset cờ nhấn nút
+//		    }
+//		// yeu cau 4
+//		 if(ButtonRead_Status(BUTTONB0_GPIO_PORT, BUTTONB0_PIN) == 1) { // Nếu nút được nhấn
+//		 		        if(!isButtonPressed) { // Nếu đây là lần đầu nút được nhấn
+//		 		            isButtonPressed = 1; // Đặt cờ nhấn nút
+//		 		            timeStart = GetMilSecTick(); // Lấy thời gian hiện tại
+//		 		        }
+//
+//		 		        if((GetMilSecTick() - timeStart >= 4000) && isButtonPressed) { // Sau 4 giây
+//		 		            // Bật đèn LED
+//		 		            LEDControl_SetStatus(LEDREDA3_GPIO_PORT, LEDREDA3_PIN, 0);
+//		 		            LEDControl_SetStatus(LEDREDA10_GPIO_PORT, LEDREDA10_PIN, 0);
+//		 		            break; // Thoát khỏi vòng lặp sau khi bật đèn
+//		 		        }
+//		 		    } else {
+//		 		        isButtonPressed = 1; // Nếu nút không được nhấn, reset cờ nhấn nút
+//		 		    }
+//	}
+		while (ButtonRead_Status(BUTTONA4_GPIO_PORT, BUTTONA4_PIN) == 0) {
+			delay_ms(1000);
+			cnt++;
+			if (cnt >= 3) {
+				break;
 			}
 		}
+		if (cnt >= 3) {
+			LEDControl_SetStatus(LEDREDA3_GPIO_PORT, LEDREDA3_PIN, 1);
+			LEDControl_SetStatus(LEDREDA10_GPIO_PORT, LEDREDA10_PIN, 1);
+			cnt = 0;
+		} else {
+			cnt = 0;
+		}
 
-		// yeu cau 4
-		if (ButtonRead_Status(BUTTONB0_GPIO_PORT, BUTTONB0_PIN) == 0) {
+		while (ButtonRead_Status(BUTTONB0_GPIO_PORT, BUTTONB0_PIN) == 0) {
+			delay_ms(1000);
+			cnt1++;
+			if (cnt1 >= 3) {
+				break;
+			}
+		}
+		if (cnt1 >= 3) {
 			LEDControl_SetStatus(LEDREDA3_GPIO_PORT, LEDREDA3_PIN, 0);
 			LEDControl_SetStatus(LEDREDA10_GPIO_PORT, LEDREDA10_PIN, 0);
-			delay_ms(4000);
+			cnt1 = 0;
+		} else {
+			cnt1 = 0;
 		}
 	}
 }
@@ -387,22 +425,21 @@ uint32_t CalculatorTime(uint32_t dwTimeInit, uint32_t dwTimeCurrent) {
  * @param  None
  * @retval None
  */
-static void AppCommon()
-{
+static void AppCommon() {
 	SystemCoreClockUpdate();
 	TimerInit();
 
-    SPI1_Init();
-    I2C_Init_temphumi();
-    TemHumSensor_Init();
-    Ucglib4WireSWSPI_begin(&ucg, UCG_FONT_MODE_SOLID); //là hàm khởi tạo LCD.
-    ucg_ClearScreen(&ucg);
-    ucg_SetFont(&ucg, ucg_font_ncenR12_hr);
-    ucg_SetColor(&ucg, 0, 255, 255, 255);
-    ucg_SetColor(&ucg, 1, 0, 0, 0);
-    ucg_SetRotate180(&ucg);
-    Scan_TimeSensor(5000);
-    time_initial = GetMilSecTick();
+	SPI1_Init();
+	I2C_Init_temphumi();
+	TemHumSensor_Init();
+	Ucglib4WireSWSPI_begin(&ucg, UCG_FONT_MODE_SOLID); //là hàm khởi tạo LCD.
+	ucg_ClearScreen(&ucg);
+	ucg_SetFont(&ucg, ucg_font_ncenR12_hr);
+	ucg_SetColor(&ucg, 0, 255, 255, 255);
+	ucg_SetColor(&ucg, 1, 0, 0, 0);
+	ucg_SetRotate180(&ucg);
+	Scan_TimeSensor(5000);
+	time_initial = GetMilSecTick();
 }
 
 /**
@@ -411,19 +448,21 @@ static void AppCommon()
  * @param  None
  * @retval None
  */
-static void SPI1_Init(void)
-{
+static void SPI1_Init(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
 	/* GPIOA, GPIOB and GPIOC Clocks enable */
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC, ENABLE);
+	RCC_AHB1PeriphClockCmd(
+			RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC,
+			ENABLE);
 
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 
-	GPIO_InitStructure.GPIO_Pin = SPI1_SCK_PIN | SPI1_MOSI_PIN | SPI1_RS_PIN | SPI1_MODE_PIN;
+	GPIO_InitStructure.GPIO_Pin = SPI1_SCK_PIN | SPI1_MOSI_PIN | SPI1_RS_PIN
+			| SPI1_MODE_PIN;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 	GPIO_InitStructure.GPIO_Pin = SPI1_CS_PIN | SPI1_ENABLE_PIN;
@@ -439,8 +478,7 @@ static void SPI1_Init(void)
  * @param  None
  * @retval None
  */
-static void I2C_Init_temphumi(void)
-{
+static void I2C_Init_temphumi(void) {
 // Initialization struct
 	I2C_InitTypeDef I2C_InitStruct;
 	GPIO_InitTypeDef GPIO_InitStruct;
@@ -462,7 +500,7 @@ static void I2C_Init_temphumi(void)
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;
-	GPIO_InitStruct.GPIO_PuPd  = GPIO_PuPd_NOPULL;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(I2C_GPIO, &GPIO_InitStruct);
 
 	/* Connect PXx to I2C_SCL */
@@ -478,10 +516,10 @@ static void I2C_Init_temphumi(void)
  * @param   None
  * @retval  None
  */
-void I2C_start(void)
-{
+void I2C_start(void) {
 	// Wait until I2Cx is not busy anymore
-	while (I2C_GetFlagStatus(I2Cx_SENSOR, I2C_FLAG_BUSY));
+	while (I2C_GetFlagStatus(I2Cx_SENSOR, I2C_FLAG_BUSY))
+		;
 
 	// Generate start condition
 	I2C_GenerateSTART(I2Cx_SENSOR, ENABLE);
@@ -489,7 +527,8 @@ void I2C_start(void)
 	// Wait for I2C EV5.
 	// It means that the start condition has been correctly released
 	// on the I2C bus (the bus is free, no other devices is communicating))
-	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_MODE_SELECT));
+	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_MODE_SELECT))
+		;
 }
 
 /**
@@ -498,8 +537,7 @@ void I2C_start(void)
  * @param   None
  * @retval  None
  */
-void I2C_address_direction(uint8_t address, uint8_t direction)
-{
+void I2C_address_direction(uint8_t address, uint8_t direction) {
 	// Send slave address
 	I2C_Send7bitAddress(I2Cx_SENSOR, address, direction);
 
@@ -507,11 +545,14 @@ void I2C_address_direction(uint8_t address, uint8_t direction)
 	// It means that a slave acknowledges his address
 	if (direction == I2C_Direction_Transmitter)		// truyền
 	{
-		while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
-	}
-	else if (direction == I2C_Direction_Receiver)  // nhận
+		while (!I2C_CheckEvent(I2Cx_SENSOR,
+				I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+			;
+	} else if (direction == I2C_Direction_Receiver)  // nhận
 	{
-		while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
+		while (!I2C_CheckEvent(I2Cx_SENSOR,
+				I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
+			;
 	}
 }
 
@@ -521,14 +562,14 @@ void I2C_address_direction(uint8_t address, uint8_t direction)
  * @param   None
  * @retval  None
  */
-void I2C_transmit(uint8_t byte)
-{
+void I2C_transmit(uint8_t byte) {
 	// Send data byte
 	I2C_SendData(I2Cx_SENSOR, byte);
 	// Wait for I2C EV8_2.
 	// It means that the data has been physically shifted out and
 	// output on the bus)
-	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
+	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+		;
 }
 
 /**
@@ -537,8 +578,7 @@ void I2C_transmit(uint8_t byte)
  * @param   None
  * @retval  None
  */
-void I2C_stop(void)
-{
+void I2C_stop(void) {
 	// Generate I2C stop condition
 	I2C_GenerateSTOP(I2Cx_SENSOR, ENABLE);
 }
@@ -549,18 +589,17 @@ void I2C_stop(void)
  * @param   None
  * @retval  None
  */
-uint8_t I2C_receive_nack(void)
-{
+uint8_t I2C_receive_nack(void) {
 	// Disable ACK of received data
 	I2C_AcknowledgeConfig(I2Cx_SENSOR, DISABLE);
 	// Wait for I2C EV7
 	// It means that the data has been received in I2C data register
-	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_BYTE_RECEIVED));
+	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_BYTE_RECEIVED))
+		;
 
 	// Read and return data byte from I2C data register
 	return I2C_ReceiveData(I2Cx_SENSOR);
 }
-
 
 /**
  * @func    I2C_receive_ack
@@ -568,13 +607,13 @@ uint8_t I2C_receive_nack(void)
  * @param   None
  * @retval  None
  */
-uint8_t I2C_receive_ack(void)
-{
+uint8_t I2C_receive_ack(void) {
 	// Enable ACK of received data
 	I2C_AcknowledgeConfig(I2Cx_SENSOR, ENABLE);
 	// Wait for I2C EV7
 	// It means that the data has been received in I2C data register
-	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_BYTE_RECEIVED));
+	while (!I2C_CheckEvent(I2Cx_SENSOR, I2C_EVENT_MASTER_BYTE_RECEIVED))
+		;
 
 	// Read and return data byte from I2C data register
 	return I2C_ReceiveData(I2Cx_SENSOR);
@@ -586,12 +625,11 @@ uint8_t I2C_receive_ack(void)
  * @param   None
  * @retval  None
  */
-static void TemHumSensor_readRegister(
-		uint8_t address,	// Địa chỉ cảm biến.
-	    uint8_t* pAddressRegister, // Địa chỉ của thanh ghi chứa dữ liệu nhiệt độ, độ ẩm.
-	    uint8_t* pDataRegister, // Dữ liệu đọc được từ thanh ghi tương ứng.
-	    uint8_t Length_Data, //Độ dài Dữ liệu đọc được từ thanh ghi tương ứng.
-	    uint16_t delay)	//Dữ liệu đọc được từ thanh ghi tương ứng.
+static void TemHumSensor_readRegister(uint8_t address,	// Địa chỉ cảm biến.
+		uint8_t *pAddressRegister, // Địa chỉ của thanh ghi chứa dữ liệu nhiệt độ, độ ẩm.
+		uint8_t *pDataRegister, // Dữ liệu đọc được từ thanh ghi tương ứng.
+		uint8_t Length_Data, //Độ dài Dữ liệu đọc được từ thanh ghi tương ứng.
+		uint16_t delay)	//Dữ liệu đọc được từ thanh ghi tương ứng.
 {
 	uint8_t LengthCmd = pAddressRegister[0];
 
@@ -602,23 +640,19 @@ static void TemHumSensor_readRegister(
 		I2C_transmit(pAddressRegister[i]);		// Send Data from register
 	}
 
-    if (delay > 0) {
-        delay_ms(delay);
-    }
+	if (delay > 0) {
+		delay_ms(delay);
+	}
 
-	I2C_stop();// condition stop
+	I2C_stop();		// condition stop
 
 	I2C_start(); // condition start
 	I2C_address_direction(address << 1, I2C_Direction_Receiver); // send slave address - Received
 
-	for (uint8_t i = 0; i < Length_Data; i++)
-	{
-		if (i == (Length_Data - 1))
-		{
+	for (uint8_t i = 0; i < Length_Data; i++) {
+		if (i == (Length_Data - 1)) {
 			pDataRegister[i] = I2C_receive_nack();  // 	NA
-		}
-		else
-		{
+		} else {
 			pDataRegister[i] = I2C_receive_ack();   // A
 		}
 	}
@@ -626,28 +660,25 @@ static void TemHumSensor_readRegister(
 
 }
 
-
 /**
  * @func    GetTemp_Sensor
  * @brief   Get value temperature
  * @param   None
  * @retval  Temperature
  */
-uint32_t GetTemp_Sensor(void)
-{
+uint32_t GetTemp_Sensor(void) {
 	uint32_t RT;
-    uint8_t pRT[3] = { 0 };	// pRT[0]: MSB		pRT[1]: LSB
+	uint8_t pRT[3] = { 0 };	// pRT[0]: MSB		pRT[1]: LSB
 
-    uint8_t CMD_MEASURE_TEMP[2] =  { 2, 0xE3 }; // gửi độ dài byte cần truyền và CMD_MEASURE chế độ HOLD MASTER MODE
+	uint8_t CMD_MEASURE_TEMP[2] = { 2, 0xE3 }; // gửi độ dài byte cần truyền và CMD_MEASURE chế độ HOLD MASTER MODE
 
-    TemHumSensor_readRegister(SI7020_ADDR, CMD_MEASURE_TEMP, pRT, 3, 4);
+	TemHumSensor_readRegister(SI7020_ADDR, CMD_MEASURE_TEMP, pRT, 3, 4);
 
-    RT = (pRT[0] << 8) + pRT[1];			// RT_CODE (MSB << 8) + LSB		// Temp = ((17572* RT)/(0xFFu +1) - 4685)/100
-    RT = ((RT * 17572) >> 16) - 4685;
-    RT = RT/100;
-    return RT;
+	RT = (pRT[0] << 8) + pRT[1];// RT_CODE (MSB << 8) + LSB		// Temp = ((17572* RT)/(0xFFu +1) - 4685)/100
+	RT = ((RT * 17572) >> 16) - 4685;
+	RT = RT / 100;
+	return RT;
 }
-
 
 /**
  * @func    GetHumi_Sensor
@@ -655,23 +686,20 @@ uint32_t GetTemp_Sensor(void)
  * @param   None
  * @retval  Humidity
  */
-uint32_t GetHumi_Sensor(void)
-{
+uint32_t GetHumi_Sensor(void) {
 	uint32_t RH;
 	uint8_t pRH[3] = { 0 };
 
+	uint8_t CMD_MEASURE_HUMI[2] = { 2, 0xE5 }; // gửi độ dài byte cần truyền và CMD_MEASURE chế độ HOLD MASTER MODE
 
-	uint8_t CMD_MEASURE_HUMI[2] =  { 2, 0xE5 }; // gửi độ dài byte cần truyền và CMD_MEASURE chế độ HOLD MASTER MODE
+	TemHumSensor_readRegister(SI7020_ADDR, CMD_MEASURE_HUMI, pRH, 3, 8);
 
-    TemHumSensor_readRegister(SI7020_ADDR, CMD_MEASURE_HUMI, pRH, 3, 8);
+	RH = (pRH[0] << 8) + pRH[1]; // RH_CODE (MSB << 8) + LSB
+	RH = ((RH * 12500) >> 16) - 600;
+	RH = RH / 100;
 
-    RH = (pRH[0] << 8) + pRH[1]; // RH_CODE (MSB << 8) + LSB
-    RH = ((RH * 12500) >> 16) - 600;
-    RH = RH/100;
-
-    return RH;
+	return RH;
 }
-
 
 /**
  * @func 	processGetValueSensor
@@ -696,19 +724,18 @@ void processGetValueSensor(void) {
 		humidity = (uint8_t) (GetHumi_Sensor());
 
 	}
-	if(time_total >= CYCLE_SEND_DATA_2)
-	{
+	if (time_total >= CYCLE_SEND_DATA_2) {
 		temperature1 = (uint8_t) (GetTemp_Sensor());
 
 		humidity1 = (uint8_t) (GetHumi_Sensor());
 
 		// nếu thời gian chênh lệch giữa lần đo 1 và lần đo 2 là 2 thì sẽ cập nhật giá trị sensor
-		if( ((temperature1 > temperature ) && (temperature1 - temperature >= 2))
-		 || ((temperature1 < temperature ) && (temperature1 - temperature <= 2))
-		 || ((humidity1 > humidity ) && (humidity1 - humidity >= 2))
-		 || ((humidity1 < humidity ) && (humidity1 - humidity <= 2)))
-		{
-			ucg_DrawString(&ucg, 0, 32, 0, "Assignment 2");
+		if (((temperature1 > temperature) && (temperature1 - temperature >= 2))
+				|| ((temperature1 < temperature)
+						&& (temperature1 - temperature <= 2))
+				|| ((humidity1 > humidity) && (humidity1 - humidity >= 2))
+				|| ((humidity1 < humidity) && (humidity1 - humidity <= 2))) {
+			ucg_DrawString(&ucg, 0, 32, 0, "Nhom 2");
 			memset(src1, 0, sizeof(src1));
 			sprintf(src1, " Temp = %d oC  ", temperature1);
 			ucg_DrawString(&ucg, 0, 52, 0, src1);
@@ -726,13 +753,12 @@ void processGetValueSensor(void) {
 }
 
 /**
-* @func 	Scan_SensorLCD
-* @brief	Scan display value sensor
-* @param	None
-* @retval	None
-*/
-void Scan_SensorLCD(void)
-{
+ * @func 	Scan_SensorLCD
+ * @brief	Scan display value sensor
+ * @param	None
+ * @retval	None
+ */
+void Scan_SensorLCD(void) {
 	ucg_DrawString(&ucg, 0, 32, 0, "Nhom 2");
 	memset(src3, 0, sizeof(src3));
 	sprintf(src3, " Nhiet do = %d oC  ", temperature);
@@ -743,17 +769,17 @@ void Scan_SensorLCD(void)
 	ucg_DrawString(&ucg, 0, 72, 0, src4);
 }
 /**
-* @func 	Scan_1s
-* @brief	Scan period 1s
-* @param	None
-* @retval	None
-*/
-void Scan_TimeSensor(uint32_t byRepeats)
-{
+ * @func 	Scan_1s
+ * @brief	Scan period 1s
+ * @param	None
+ * @retval	None
+ */
+void Scan_TimeSensor(uint32_t byRepeats) {
 	if (idTimer != NO_TIMER) {
-	TimerStop(idTimer);
+		TimerStop(idTimer);
 	}
-	idTimer = TimerStart("Scan_sensor", byRepeats, TIMER_REPEAT_FOREVER, (void*) Scan_SensorLCD, NULL);
+	idTimer = TimerStart("Scan_sensor", byRepeats, TIMER_REPEAT_FOREVER,
+			(void*) Scan_SensorLCD, NULL);
 }
 /* modified------------------------------------*/
 
@@ -763,12 +789,11 @@ void Scan_TimeSensor(uint32_t byRepeats)
  * @param  None
  * @retval None
  */
-static void AppInitCommon(void)
-{
+static void AppInitCommon(void) {
 	SystemCoreClockUpdate(); 	// Cấp nguồn clock cho vi điều khiển 84 Mhz.
 	TimerInit();				// Khởi tạo TIMER sử dụng system tick.
 	LightSensor_AdcInit();		// Khởi tạo ngoại vi ADC ở chế độ Polling
-	LedControl_TimerOCInit();   // Khởi tạo ngoại vi TIMER ở chế độ pawm xung output compare
+	LedControl_TimerOCInit(); // Khởi tạo ngoại vi TIMER ở chế độ pawm xung output compare
 
 	KalmanFilterInit(2, 2, 0.001); // Khởi tạo bộ lọc Kalman
 
@@ -786,8 +811,7 @@ static void AppInitCommon(void)
  * @param  None
  * @retval None
  */
-static void LightSensor_AdcInit(void)
-{
+static void LightSensor_AdcInit(void) {
 	ADC_CommonInitTypeDef ADC_CommonInitStructure;
 	ADC_InitTypeDef ADC_InitStructure;
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -827,7 +851,6 @@ static void LightSensor_AdcInit(void)
 	ADC_DiscModeChannelCountConfig(ADC1, 1);
 	ADC_DiscModeCmd(ADC1, ENABLE);
 
-
 	/* ADC1 regular channel15 configuration ************************************/
 	ADC_RegularChannelConfig(ADC1, ADC_Channel_15, 1, ADC_SampleTime_15Cycles);
 
@@ -840,12 +863,10 @@ static void LightSensor_AdcInit(void)
  * @param  None
  * @retval None
  */
-static void LedControl_TimerOCInit(void)
-{
-	GPIO_InitTypeDef 			GPIO_InitStruct;
-	TIM_TimeBaseInitTypeDef 	TIM_TimeBaseInitStruct;
-	TIM_OCInitTypeDef			TIM_OC_InitStruct;
-
+static void LedControl_TimerOCInit(void) {
+	GPIO_InitTypeDef GPIO_InitStruct;
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
+	TIM_OCInitTypeDef TIM_OC_InitStruct;
 
 	// GPIO Configure
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
@@ -874,7 +895,6 @@ static void LedControl_TimerOCInit(void)
 	TIM_TimeBaseInitStruct.TIM_ClockDivision = 0;
 	TIM_TimeBaseInit(TIM1, &TIM_TimeBaseInitStruct);
 
-
 	//TimeIC Configure
 	TIM_OC_InitStruct.TIM_OCMode = TIM_OCMode_PWM2;
 	TIM_OC_InitStruct.TIM_OutputState = TIM_OutputState_Enable;
@@ -885,7 +905,6 @@ static void LedControl_TimerOCInit(void)
 
 	TIM_Cmd(TIM1, ENABLE);
 
-
 	TIM_CtrlPWMOutputs(TIM1, ENABLE);
 }
 /**
@@ -894,15 +913,15 @@ static void LedControl_TimerOCInit(void)
  * @param  None
  * @retval None
  */
-uint16_t LightSensor_AdcPollingRead(void)
-{
+uint16_t LightSensor_AdcPollingRead(void) {
 	uint16_t result = 0;
 
 	// Bắt đầu quá trình chuyển đổi ADC
 	ADC_SoftwareStartConv(ADCx_SENSOR);
 
 	// Đợi quá trình chuyển đổi được hoàn thành để đọc dữ liệu
-	while (ADC_GetFlagStatus(ADCx_SENSOR, ADC_FLAG_EOC) == RESET);
+	while (ADC_GetFlagStatus(ADCx_SENSOR, ADC_FLAG_EOC) == RESET)
+		;
 
 	// Read value
 	result = ADC_GetConversionValue(ADCx_SENSOR);
@@ -916,8 +935,7 @@ uint16_t LightSensor_AdcPollingRead(void)
  * @param  None
  * @retval None
  */
-uint16_t Kanman_Light(uint16_t lightLevel)
-{
+uint16_t Kanman_Light(uint16_t lightLevel) {
 	lightLevelAfterFilter = KalmanFilter_updateEstimate(lightLevel);
 
 	return lightLevelAfterFilter;
@@ -929,9 +947,8 @@ uint16_t Kanman_Light(uint16_t lightLevel)
  * @param  None
  * @retval None
  */
-static void LedControl_TimerOCSetPwm(uint32_t Compare)
-{
-	TIM_SetCompare4(TIM1,Compare);
+static void LedControl_TimerOCSetPwm(uint32_t Compare) {
+	TIM_SetCompare4(TIM1, Compare);
 }
 /**
  * @func   ABL_Process
@@ -939,28 +956,22 @@ static void LedControl_TimerOCSetPwm(uint32_t Compare)
  * @param  None
  * @retval None
  */
-static void ABL_Process(void)
-{
+static void ABL_Process(void) {
 	uint32_t dwTimeCurrent;
 	static uint32_t dwTimeTotal, dwTimeInit;
 
 	dwTimeCurrent = GetMilSecTick();
 
-	if(dwTimeCurrent >= dwTimeInit)
-	{
+	if (dwTimeCurrent >= dwTimeInit) {
 		dwTimeTotal += dwTimeCurrent - dwTimeInit;
-	}
-	else
-	{
+	} else {
 		dwTimeTotal += 0xFFFFFFFFU - dwTimeCurrent + dwTimeInit;
 	}
 
-	if(dwTimeTotal >= 100)
-	{
+	if (dwTimeTotal >= 100) {
 		dwTimeTotal = 0;
-		AdcValue  = LightSensor_AdcPollingRead(); // Đọc giá trị ADC đo được từ cảm biến ánh sáng
+		AdcValue = LightSensor_AdcPollingRead(); // Đọc giá trị ADC đo được từ cảm biến ánh sáng
 		Kanman_light = Kanman_Light(AdcValue);
-
 
 		LedControl_TimerOCSetPwm(Kanman_light);
 		memset(src3, 0, sizeof(src3));

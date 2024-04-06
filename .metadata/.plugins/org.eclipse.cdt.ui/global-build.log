@@ -1,29 +1,74 @@
-00:50:01 **** Incremental Build of configuration Debug for project Giua_ky ****
+10:41:24 **** Incremental Build of configuration Debug for project Giua_ky ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/CMSIS" -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/inc" -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'AppInitCommon':
-../Src/main.c:773:9: warning: implicit declaration of function 'KalmanFilterInit' [-Wimplicit-function-declaration]
-  773 |         KalmanFilterInit(2, 2, 0.001); // Khởi tạo bộ lọc Kalman
-      |         ^~~~~~~~~~~~~~~~
-../Src/main.c: In function 'Kanman_Light':
-../Src/main.c:921:33: warning: implicit declaration of function 'KalmanFilter_updateEstimate' [-Wimplicit-function-declaration]
-  921 |         lightLevelAfterFilter = KalmanFilter_updateEstimate(lightLevel);
-      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-At top level:
-../Src/main.c:942:13: warning: 'ABL_Process' defined but not used [-Wunused-function]
-  942 | static void ABL_Process(void)
-      |             ^~~~~~~~~~~
-../Src/main.c:766:13: warning: 'AppInitCommon' defined but not used [-Wunused-function]
-  766 | static void AppInitCommon(void)
-      |             ^~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Giua_ky.elf" @"objects.list"  -lLibraries -mcpu=cortex-m4 -T"D:\Năm 3\STM32\app\Giua_ky\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Giua_ky.map" -Wl,--gc-sections -static -L"D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Giua_ky.elf
- 
 arm-none-eabi-size  Giua_ky.elf 
-arm-none-eabi-objdump -h -S Giua_ky.elf  > "Giua_ky.list"
    text	   data	    bss	    dec	    hex	filename
-  22056	    128	   6704	  28888	   70d8	Giua_ky.elf
+  30660	    128	   6744	  37532	   929c	Giua_ky.elf
 Finished building: default.size.stdout
  
-Finished building: Giua_ky.list
+10:42:48 **** Rebuild of configuration Debug for project C_programming ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o struct_union.o "..\\struct_union.c" 
+gcc -o C_programming.exe struct_union.o 
+10:42:48 **** Build of configuration Debug for project GPIO_0903 ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/CMSIS/Include" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/STM32F401RE_StdPeriph_Driver/inc" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/button" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/buzzer" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/led" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/rtos" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/sensor" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/serial" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/ucglib" -I"D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/shared/Utilities" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "GPIO_0903.elf" @"objects.list"  -lLibraries -mcpu=cortex-m4 -T"D:\Năm 3\STM32\app\GPIO_0903\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_0903.map" -Wl,--gc-sections -static -L"D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GPIO_0903.elf
+ 
+arm-none-eabi-size  GPIO_0903.elf 
+arm-none-eabi-objdump -h -S GPIO_0903.elf  > "GPIO_0903.list"
+arm-none-eabi-objcopy  -O ihex GPIO_0903.elf  "GPIO_0903.hex"
+   text	   data	    bss	    dec	    hex	filename
+    644	      8	   1568	   2220	    8ac	GPIO_0903.elf
+arm-none-eabi-objcopy  -O binary GPIO_0903.elf  "GPIO_0903.bin"
+Finished building: default.size.stdout
+ 
+Finished building: GPIO_0903.list
+ 
+Finished building: GPIO_0903.hex
+Finished building: GPIO_0903.bin
+ 
+ 
+10:42:49 **** Build of configuration Debug for project GPIO_1603 ****
+make -j8 all 
+arm-none-eabi-size  GPIO_1603.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1496	      8	   1568	   3072	    c00	GPIO_1603.elf
+Finished building: default.size.stdout
+ 
+10:42:49 **** Incremental Build of configuration Debug for project Giua_ky ****
+make -j8 all 
+arm-none-eabi-size  Giua_ky.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30660	    128	   6744	  37532	   929c	Giua_ky.elf
+Finished building: default.size.stdout
+ 
+10:42:50 **** Build of configuration Debug for project demo ****
+make -j8 all 
+arm-none-eabi-size  demo.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23228	     48	   6264	  29540	   7364	demo.elf
+Finished building: default.size.stdout
+ 
+10:42:50 **** Build of configuration Debug for project f1 ****
+make -j8 all 
+arm-none-eabi-size  f1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4604	     20	   1572	   6196	   1834	f1.elf
+Finished building: default.size.stdout
+ 
+10:42:50 **** Build of configuration Debug for project first_project ****
+make -j8 all 
+arm-none-eabi-size  first_project.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4652	     20	   1572	   6244	   1864	first_project.elf
+Finished building: default.size.stdout
+ 
+10:43:28 **** Incremental Build of configuration Debug for project Giua_ky ****
+make -j8 all 
+arm-none-eabi-size  Giua_ky.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30660	    128	   6744	  37532	   929c	Giua_ky.elf
+Finished building: default.size.stdout
  

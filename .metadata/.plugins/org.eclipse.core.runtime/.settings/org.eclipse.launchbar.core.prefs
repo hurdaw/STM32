@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:C_programming.exe,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:GPIO_1603,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Giua_ky Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:demo,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:f1
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:C_programming.exe,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:GPIO_1603,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:demo,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:f1,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Giua_ky Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:GPIO_1603/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:GPIO_1603/activeLaunchTarget=null\:---

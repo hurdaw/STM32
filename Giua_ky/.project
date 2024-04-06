@@ -30,11 +30,6 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>libs</name>
-			<type>2</type>
-			<location>C:/Users/HP/Documents/libs</location>
-		</link>
-		<link>
 			<name>Drivers/inc/lib_stm</name>
 			<type>2</type>
 			<location>D:/Năm 3/STM32/app/SDK_1.0.3_NUCLEO-F401RE/lib_stm</location>

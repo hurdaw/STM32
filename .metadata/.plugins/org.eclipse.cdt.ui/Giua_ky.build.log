@@ -1,32 +1,10 @@
-00:50:01 **** Incremental Build of configuration Debug for project Giua_ky ****
+10:43:28 **** Incremental Build of configuration Debug for project Giua_ky ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/CMSIS" -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/inc" -I"D:/Năm 3/STM32/app/Giua_ky/Drivers/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'AppInitCommon':
-../Src/main.c:773:9: warning: implicit declaration of function 'KalmanFilterInit' [-Wimplicit-function-declaration]
-  773 |         KalmanFilterInit(2, 2, 0.001); // Khởi tạo bộ lọc Kalman
-      |         ^~~~~~~~~~~~~~~~
-../Src/main.c: In function 'Kanman_Light':
-../Src/main.c:921:33: warning: implicit declaration of function 'KalmanFilter_updateEstimate' [-Wimplicit-function-declaration]
-  921 |         lightLevelAfterFilter = KalmanFilter_updateEstimate(lightLevel);
-      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-At top level:
-../Src/main.c:942:13: warning: 'ABL_Process' defined but not used [-Wunused-function]
-  942 | static void ABL_Process(void)
-      |             ^~~~~~~~~~~
-../Src/main.c:766:13: warning: 'AppInitCommon' defined but not used [-Wunused-function]
-  766 | static void AppInitCommon(void)
-      |             ^~~~~~~~~~~~~
-arm-none-eabi-gcc -o "Giua_ky.elf" @"objects.list"  -lLibraries -mcpu=cortex-m4 -T"D:\Năm 3\STM32\app\Giua_ky\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Giua_ky.map" -Wl,--gc-sections -static -L"D:\Năm 3\STM32\app\SDK_1.0.3_NUCLEO-F401RE\lib_stm" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Giua_ky.elf
- 
 arm-none-eabi-size  Giua_ky.elf 
-arm-none-eabi-objdump -h -S Giua_ky.elf  > "Giua_ky.list"
    text	   data	    bss	    dec	    hex	filename
-  22056	    128	   6704	  28888	   70d8	Giua_ky.elf
+  30660	    128	   6744	  37532	   929c	Giua_ky.elf
 Finished building: default.size.stdout
  
-Finished building: Giua_ky.list
- 
 
-00:50:01 Build Finished. 0 errors, 4 warnings. (took 714ms)
+10:43:28 Build Finished. 0 errors, 0 warnings. (took 141ms)
 

@@ -1,1 +1,7 @@
-Info: Nothing to build for C_programming
+10:42:48 **** Rebuild of configuration Debug for project C_programming ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o struct_union.o "..\\struct_union.c" 
+gcc -o C_programming.exe struct_union.o 
+
+10:42:48 Build Finished. 0 errors, 0 warnings. (took 532ms)
+
